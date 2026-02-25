@@ -1,13 +1,43 @@
 /* ═══════════════════════════════════════════════════════════════
    ORIGAMI PAPERCRAFT — DCC Empleo Analytics
-   A warm, tactile aesthetic: kraft-paper tones, folded edges,
-   inset shadows that simulate layered paper sheets.
+   Estética cálida y táctil: tonos de papel kraft, bordes
+   doblados, sombras interiores que simulan hojas superpuestas.
    ═══════════════════════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Geist';
+  src: url('/fonts/Geist-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  /* paper palette */
+  /* paleta papel */
   --kraft:       #e8dcc8;
   --kraft-light: #f2ebe0;
   --kraft-dark:  #c9b99a;
@@ -18,7 +48,7 @@
   --fold:        rgba(0,0,0,0.06);
   --fold-dark:   rgba(0,0,0,0.12);
 
-  /* accent palette — warm terracotta + sage */
+  /* acentos — terracotta + sage */
   --terracotta:    #c4654a;
   --terracotta-bg: #c4654a18;
   --sage:          #6b8f71;
@@ -28,7 +58,7 @@
   --slate-blue:    #5b7b8f;
   --slate-blue-bg: #5b7b8f18;
 
-  /* chart colors */
+  /* colores de gráficos */
   --chart-1: #c4654a;
   --chart-2: #6b8f71;
   --chart-3: #c4944a;
@@ -38,15 +68,14 @@
   --chart-7: #4a6bc4;
   --chart-8: #c46ba0;
 
-  /* typography */
-  --font-display: 'DM Serif Display', Georgia, serif;
-  --font-body:    'DM Sans', system-ui, sans-serif;
+  /* tipografía */
+  --font-sans: 'Geist', Arial, system-ui, sans-serif;
 
-  /* spacing */
+  /* espaciado */
   --gap:  1.5rem;
   --gap-lg: 3rem;
 
-  /* paper effect */
+  /* efecto papel */
   --paper-shadow:
     inset 0  2px 4px rgba(255,255,255,0.5),
     inset 0 -1px 2px rgba(0,0,0,0.04),
@@ -72,10 +101,10 @@ html {
 }
 
 body {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   color: var(--ink);
   background: var(--kraft);
-  /* Subtle paper texture via repeating gradient */
+  /* textura sutil de papel */
   background-image:
     repeating-linear-gradient(
       0deg,
@@ -122,16 +151,16 @@ body {
 }
 
 .site-title {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: clamp(2rem, 5vw, 3.2rem);
   color: var(--ink);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   line-height: 1.15;
-  font-weight: 400;
+  font-weight: 700;
 }
 
 .site-subtitle {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: 0.95rem;
   color: var(--ink-muted);
   margin-top: 0.5rem;
@@ -144,7 +173,7 @@ body {
   margin-top: 0.3rem;
 }
 
-/* ─── PAPER CARD ────────────────────────────── */
+/* ─── TARJETA PAPEL ─────────────────────────── */
 
 .paper-card {
   background: var(--cream);
@@ -161,7 +190,7 @@ body {
   transform: translateY(-1px);
 }
 
-/* folded corner effect */
+/* esquina doblada */
 .paper-card::before {
   content: '';
   position: absolute;
@@ -181,18 +210,18 @@ body {
   z-index: 1;
 }
 
-/* ─── SECTION TITLES ────────────────────────── */
+/* ─── TÍTULOS DE SECCIÓN ────────────────────── */
 
 .section-header {
   margin-bottom: 1.5rem;
 }
 
 .section-title {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 1.65rem;
   color: var(--ink);
-  font-weight: 400;
-  letter-spacing: -0.01em;
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
 .section-description {
@@ -202,7 +231,7 @@ body {
   max-width: 600px;
 }
 
-/* ─── CHART CARD ────────────────────────────── */
+/* ─── TARJETA DE GRÁFICO ────────────────────── */
 
 .chart-card {
   background: var(--cream);
@@ -233,14 +262,15 @@ body {
 }
 
 .chart-card-title {
-  font-family: var(--font-display);
-  font-size: 1.15rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
   color: var(--ink);
-  font-weight: 400;
+  font-weight: 600;
   margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
 }
 
-/* ─── FILTER BAR ────────────────────────────── */
+/* ─── BARRA DE FILTROS ──────────────────────── */
 
 .filter-bar {
   display: flex;
@@ -259,7 +289,7 @@ body {
 }
 
 .filter-btn {
-  font-family: var(--font-body);
+  font-family: var(--font-sans);
   font-size: 0.82rem;
   padding: 0.35rem 0.85rem;
   border: 1px solid var(--kraft-dark);
@@ -295,7 +325,7 @@ body {
   opacity: 0.6;
 }
 
-/* ─── GRID LAYOUTS ──────────────────────────── */
+/* ─── GRIDS ─────────────────────────────────── */
 
 .charts-grid {
   display: grid;
@@ -321,7 +351,7 @@ body {
   }
 }
 
-/* ─── KPI STRIP ─────────────────────────────── */
+/* ─── KPI ───────────────────────────────────── */
 
 .kpi-strip {
   display: flex;
@@ -342,10 +372,10 @@ body {
 }
 
 .kpi-value {
-  font-family: var(--font-display);
+  font-family: var(--font-sans);
   font-size: 1.2rem;
   color: var(--ink);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .kpi-label {
@@ -355,7 +385,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-/* ─── DIVIDER ───────────────────────────────── */
+/* ─── DIVISOR ───────────────────────────────── */
 
 .section-divider {
   border: none;
@@ -370,7 +400,7 @@ body {
   margin: var(--gap-lg) 0;
 }
 
-/* ─── FOOTER ────────────────────────────────── */
+/* ─── PIE DE PÁGINA ─────────────────────────── */
 
 .site-footer {
   text-align: center;
@@ -388,7 +418,7 @@ body {
   text-decoration: underline;
 }
 
-/* ─── EMPTY STATE ───────────────────────────── */
+/* ─── ESTADO VACÍO ──────────────────────────── */
 
 .empty-state {
   text-align: center;
