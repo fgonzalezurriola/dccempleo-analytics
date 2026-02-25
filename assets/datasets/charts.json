@@ -1,0 +1,1046 @@
+[
+  {
+    "id": "monthly_postings",
+    "kind": "line",
+    "title": "Publicaciones mensuales",
+    "description": "Cantidad de ofertas publicadas por mes en UTC.",
+    "x_axis_label": "Mes (YYYY-MM)",
+    "y_axis_label": "Nro. de publicaciones",
+    "data": [
+      {
+        "name": "2020-12",
+        "count": 8
+      },
+      {
+        "name": "2021-01",
+        "count": 38
+      },
+      {
+        "name": "2021-02",
+        "count": 31
+      },
+      {
+        "name": "2021-03",
+        "count": 47
+      },
+      {
+        "name": "2021-04",
+        "count": 48
+      },
+      {
+        "name": "2021-05",
+        "count": 59
+      },
+      {
+        "name": "2021-06",
+        "count": 49
+      },
+      {
+        "name": "2021-07",
+        "count": 29
+      },
+      {
+        "name": "2021-08",
+        "count": 60
+      },
+      {
+        "name": "2021-09",
+        "count": 44
+      },
+      {
+        "name": "2021-10",
+        "count": 29
+      },
+      {
+        "name": "2021-11",
+        "count": 51
+      },
+      {
+        "name": "2021-12",
+        "count": 43
+      },
+      {
+        "name": "2022-01",
+        "count": 43
+      },
+      {
+        "name": "2022-02",
+        "count": 35
+      },
+      {
+        "name": "2022-03",
+        "count": 25
+      },
+      {
+        "name": "2022-04",
+        "count": 46
+      },
+      {
+        "name": "2022-05",
+        "count": 39
+      },
+      {
+        "name": "2022-06",
+        "count": 37
+      },
+      {
+        "name": "2022-07",
+        "count": 26
+      },
+      {
+        "name": "2022-08",
+        "count": 34
+      },
+      {
+        "name": "2022-09",
+        "count": 27
+      },
+      {
+        "name": "2022-10",
+        "count": 28
+      },
+      {
+        "name": "2022-11",
+        "count": 38
+      },
+      {
+        "name": "2022-12",
+        "count": 37
+      },
+      {
+        "name": "2023-01",
+        "count": 39
+      },
+      {
+        "name": "2023-02",
+        "count": 12
+      },
+      {
+        "name": "2023-03",
+        "count": 24
+      },
+      {
+        "name": "2023-04",
+        "count": 20
+      },
+      {
+        "name": "2023-05",
+        "count": 39
+      },
+      {
+        "name": "2023-06",
+        "count": 30
+      },
+      {
+        "name": "2023-07",
+        "count": 18
+      },
+      {
+        "name": "2023-08",
+        "count": 17
+      },
+      {
+        "name": "2023-09",
+        "count": 14
+      },
+      {
+        "name": "2023-10",
+        "count": 22
+      },
+      {
+        "name": "2023-11",
+        "count": 26
+      },
+      {
+        "name": "2023-12",
+        "count": 23
+      },
+      {
+        "name": "2024-01",
+        "count": 21
+      },
+      {
+        "name": "2024-02",
+        "count": 23
+      },
+      {
+        "name": "2024-03",
+        "count": 27
+      },
+      {
+        "name": "2024-04",
+        "count": 36
+      },
+      {
+        "name": "2024-05",
+        "count": 25
+      },
+      {
+        "name": "2024-06",
+        "count": 22
+      },
+      {
+        "name": "2024-07",
+        "count": 34
+      },
+      {
+        "name": "2024-08",
+        "count": 22
+      },
+      {
+        "name": "2024-09",
+        "count": 31
+      },
+      {
+        "name": "2024-10",
+        "count": 14
+      },
+      {
+        "name": "2024-11",
+        "count": 16
+      },
+      {
+        "name": "2024-12",
+        "count": 39
+      },
+      {
+        "name": "2025-01",
+        "count": 32
+      },
+      {
+        "name": "2025-02",
+        "count": 39
+      },
+      {
+        "name": "2025-03",
+        "count": 45
+      },
+      {
+        "name": "2025-04",
+        "count": 38
+      },
+      {
+        "name": "2025-05",
+        "count": 30
+      },
+      {
+        "name": "2025-06",
+        "count": 54
+      },
+      {
+        "name": "2025-07",
+        "count": 29
+      },
+      {
+        "name": "2025-08",
+        "count": 68
+      },
+      {
+        "name": "2025-09",
+        "count": 29
+      },
+      {
+        "name": "2025-10",
+        "count": 68
+      },
+      {
+        "name": "2025-11",
+        "count": 59
+      },
+      {
+        "name": "2025-12",
+        "count": 60
+      },
+      {
+        "name": "2026-01",
+        "count": 38
+      },
+      {
+        "name": "2026-02",
+        "count": 30
+      }
+    ]
+  },
+  {
+    "id": "seniority_distribution",
+    "kind": "bar",
+    "title": "Distribucion de seniority",
+    "description": "Cantidad de ofertas por nivel de experiencia.",
+    "x_axis_label": "Seniority",
+    "y_axis_label": "Nro. de publicaciones",
+    "data": [
+      {
+        "name": "MID_SENIOR",
+        "count": 708
+      },
+      {
+        "name": "JUNIOR",
+        "count": 562
+      },
+      {
+        "name": "INTERN",
+        "count": 321
+      },
+      {
+        "name": "SENIOR",
+        "count": 226
+      },
+      {
+        "name": "UNKNOWN",
+        "count": 192
+      },
+      {
+        "name": "TRAINEE",
+        "count": 82
+      },
+      {
+        "name": "MIXED",
+        "count": 73
+      }
+    ]
+  },
+  {
+    "id": "seniority_bucket_distribution",
+    "kind": "bar",
+    "title": "Distribucion de seniority (agrupada)",
+    "description": "Categorias agregadas para practica, junior, semi-senior, senior y unknown.",
+    "x_axis_label": "Categoria",
+    "y_axis_label": "Nro. de publicaciones",
+    "data": [
+      {
+        "name": "PRACTICE",
+        "count": 1115
+      },
+      {
+        "name": "SEMI_SENIOR",
+        "count": 473
+      },
+      {
+        "name": "JUNIOR",
+        "count": 276
+      },
+      {
+        "name": "UNKNOWN",
+        "count": 154
+      },
+      {
+        "name": "SENIOR",
+        "count": 146
+      }
+    ]
+  },
+  {
+    "id": "top_technologies",
+    "kind": "bar",
+    "title": "Top tecnologias",
+    "description": "Tecnologias mas mencionadas en las ofertas.",
+    "x_axis_label": "Tecnologia",
+    "y_axis_label": "Nro. de menciones",
+    "data": [
+      {
+        "name": "python",
+        "count": 775
+      },
+      {
+        "name": "c",
+        "count": 748
+      },
+      {
+        "name": "react",
+        "count": 675
+      },
+      {
+        "name": "aws",
+        "count": 618
+      },
+      {
+        "name": "javascript",
+        "count": 567
+      },
+      {
+        "name": "postgresql",
+        "count": 502
+      },
+      {
+        "name": "node.js",
+        "count": 457
+      },
+      {
+        "name": "typescript",
+        "count": 423
+      },
+      {
+        "name": "sql",
+        "count": 361
+      },
+      {
+        "name": "git",
+        "count": 307
+      },
+      {
+        "name": "gcp",
+        "count": 295
+      },
+      {
+        "name": "docker",
+        "count": 255
+      },
+      {
+        "name": "django",
+        "count": 209
+      },
+      {
+        "name": "vue",
+        "count": 190
+      },
+      {
+        "name": "css",
+        "count": 179
+      },
+      {
+        "name": "ruby on rails",
+        "count": 177
+      },
+      {
+        "name": "ruby",
+        "count": 170
+      },
+      {
+        "name": "html",
+        "count": 164
+      },
+      {
+        "name": "next.js",
+        "count": 162
+      },
+      {
+        "name": "mongodb",
+        "count": 131
+      },
+      {
+        "name": "angular",
+        "count": 119
+      },
+      {
+        "name": "mysql",
+        "count": 108
+      },
+      {
+        "name": "azure",
+        "count": 102
+      },
+      {
+        "name": "fastapi",
+        "count": 101
+      },
+      {
+        "name": "react native",
+        "count": 99
+      }
+    ]
+  },
+  {
+    "id": "top_technologies_entry_level",
+    "kind": "bar",
+    "title": "Top tecnologias entry-level",
+    "description": "Tecnologias mas mencionadas en ofertas PRACTICE/JUNIOR.",
+    "x_axis_label": "Tecnologia",
+    "y_axis_label": "Nro. de menciones",
+    "data": [
+      {
+        "name": "python",
+        "count": 545
+      },
+      {
+        "name": "c",
+        "count": 504
+      },
+      {
+        "name": "react",
+        "count": 448
+      },
+      {
+        "name": "aws",
+        "count": 419
+      },
+      {
+        "name": "javascript",
+        "count": 387
+      },
+      {
+        "name": "postgresql",
+        "count": 331
+      },
+      {
+        "name": "node.js",
+        "count": 317
+      },
+      {
+        "name": "typescript",
+        "count": 277
+      },
+      {
+        "name": "sql",
+        "count": 252
+      },
+      {
+        "name": "git",
+        "count": 223
+      },
+      {
+        "name": "gcp",
+        "count": 180
+      },
+      {
+        "name": "docker",
+        "count": 163
+      },
+      {
+        "name": "django",
+        "count": 149
+      },
+      {
+        "name": "vue",
+        "count": 134
+      },
+      {
+        "name": "css",
+        "count": 119
+      },
+      {
+        "name": "ruby on rails",
+        "count": 116
+      },
+      {
+        "name": "ruby",
+        "count": 115
+      },
+      {
+        "name": "html",
+        "count": 115
+      },
+      {
+        "name": "next.js",
+        "count": 104
+      },
+      {
+        "name": "mongodb",
+        "count": 83
+      },
+      {
+        "name": "angular",
+        "count": 78
+      },
+      {
+        "name": "fastapi",
+        "count": 70
+      },
+      {
+        "name": "mysql",
+        "count": 69
+      },
+      {
+        "name": "azure",
+        "count": 64
+      },
+      {
+        "name": "react native",
+        "count": 60
+      }
+    ]
+  },
+  {
+    "id": "top_languages",
+    "kind": "bar",
+    "title": "Top lenguajes",
+    "description": "Lenguajes de programacion mas mencionados.",
+    "x_axis_label": "Lenguaje",
+    "y_axis_label": "Nro. de menciones",
+    "data": [
+      {
+        "name": "python",
+        "count": 775
+      },
+      {
+        "name": "c",
+        "count": 748
+      },
+      {
+        "name": "javascript",
+        "count": 567
+      },
+      {
+        "name": "typescript",
+        "count": 423
+      },
+      {
+        "name": "ruby",
+        "count": 170
+      },
+      {
+        "name": "java",
+        "count": 79
+      },
+      {
+        "name": "flutter",
+        "count": 76
+      },
+      {
+        "name": "php",
+        "count": 63
+      },
+      {
+        "name": "go",
+        "count": 58
+      },
+      {
+        "name": "c#",
+        "count": 54
+      },
+      {
+        "name": "kotlin",
+        "count": 26
+      },
+      {
+        "name": "swift",
+        "count": 21
+      },
+      {
+        "name": "c++",
+        "count": 20
+      },
+      {
+        "name": "bash",
+        "count": 15
+      },
+      {
+        "name": "dart",
+        "count": 14
+      },
+      {
+        "name": "rust",
+        "count": 8
+      }
+    ]
+  },
+  {
+    "id": "top_databases",
+    "kind": "bar",
+    "title": "Top bases de datos",
+    "description": "Bases de datos mas mencionadas en ofertas.",
+    "x_axis_label": "Base de datos",
+    "y_axis_label": "Nro. de menciones",
+    "data": [
+      {
+        "name": "postgresql",
+        "count": 502
+      },
+      {
+        "name": "sql",
+        "count": 361
+      },
+      {
+        "name": "mongodb",
+        "count": 131
+      },
+      {
+        "name": "mysql",
+        "count": 108
+      },
+      {
+        "name": "nosql",
+        "count": 79
+      },
+      {
+        "name": "firebase",
+        "count": 58
+      },
+      {
+        "name": "dynamodb",
+        "count": 37
+      },
+      {
+        "name": "sql server",
+        "count": 34
+      },
+      {
+        "name": "redis",
+        "count": 32
+      },
+      {
+        "name": "bigquery",
+        "count": 28
+      },
+      {
+        "name": "supabase",
+        "count": 19
+      },
+      {
+        "name": "elasticsearch",
+        "count": 18
+      },
+      {
+        "name": "oracle",
+        "count": 13
+      },
+      {
+        "name": "mariadb",
+        "count": 10
+      },
+      {
+        "name": "redshift",
+        "count": 9
+      },
+      {
+        "name": "firestore",
+        "count": 7
+      },
+      {
+        "name": "sqlite",
+        "count": 5
+      },
+      {
+        "name": "cosmosdb",
+        "count": 2
+      },
+      {
+        "name": "snowflake",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "top_cloud_platforms",
+    "kind": "bar",
+    "title": "Top cloud",
+    "description": "Plataformas cloud mas mencionadas en ofertas.",
+    "x_axis_label": "Cloud",
+    "y_axis_label": "Nro. de menciones",
+    "data": [
+      {
+        "name": "aws",
+        "count": 618
+      },
+      {
+        "name": "gcp",
+        "count": 295
+      },
+      {
+        "name": "azure",
+        "count": 102
+      },
+      {
+        "name": "vercel",
+        "count": 27
+      },
+      {
+        "name": "fly.io",
+        "count": 5
+      },
+      {
+        "name": "cloudflare",
+        "count": 3
+      },
+      {
+        "name": "digitalocean",
+        "count": 2
+      },
+      {
+        "name": "railway",
+        "count": 2
+      },
+      {
+        "name": "render",
+        "count": 2
+      }
+    ]
+  },
+  {
+    "id": "top_ai_dev_tools",
+    "kind": "bar",
+    "title": "Top herramientas dev-AI",
+    "description": "Menciones de Codex, Cursor, Claude Code y GitHub Copilot.",
+    "x_axis_label": "Herramienta",
+    "y_axis_label": "Nro. de menciones",
+    "data": [
+      {
+        "name": "cursor",
+        "count": 40
+      },
+      {
+        "name": "claude code",
+        "count": 5
+      },
+      {
+        "name": "codex",
+        "count": 2
+      },
+      {
+        "name": "github copilot",
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "monthly_ai_dev_adoption",
+    "kind": "line",
+    "title": "Aparicion mensual de herramientas dev-AI",
+    "description": "Cantidad de ofertas por mes que mencionan al menos una herramienta dev-AI.",
+    "x_axis_label": "Mes (YYYY-MM)",
+    "y_axis_label": "Nro. de ofertas con dev-AI",
+    "data": [
+      {
+        "name": "2020-12",
+        "count": 0
+      },
+      {
+        "name": "2021-01",
+        "count": 0
+      },
+      {
+        "name": "2021-02",
+        "count": 0
+      },
+      {
+        "name": "2021-03",
+        "count": 0
+      },
+      {
+        "name": "2021-04",
+        "count": 0
+      },
+      {
+        "name": "2021-05",
+        "count": 0
+      },
+      {
+        "name": "2021-06",
+        "count": 0
+      },
+      {
+        "name": "2021-07",
+        "count": 0
+      },
+      {
+        "name": "2021-08",
+        "count": 0
+      },
+      {
+        "name": "2021-09",
+        "count": 0
+      },
+      {
+        "name": "2021-10",
+        "count": 0
+      },
+      {
+        "name": "2021-11",
+        "count": 0
+      },
+      {
+        "name": "2021-12",
+        "count": 0
+      },
+      {
+        "name": "2022-01",
+        "count": 0
+      },
+      {
+        "name": "2022-02",
+        "count": 0
+      },
+      {
+        "name": "2022-03",
+        "count": 0
+      },
+      {
+        "name": "2022-04",
+        "count": 0
+      },
+      {
+        "name": "2022-05",
+        "count": 0
+      },
+      {
+        "name": "2022-06",
+        "count": 0
+      },
+      {
+        "name": "2022-07",
+        "count": 0
+      },
+      {
+        "name": "2022-08",
+        "count": 0
+      },
+      {
+        "name": "2022-09",
+        "count": 0
+      },
+      {
+        "name": "2022-10",
+        "count": 0
+      },
+      {
+        "name": "2022-11",
+        "count": 0
+      },
+      {
+        "name": "2022-12",
+        "count": 0
+      },
+      {
+        "name": "2023-01",
+        "count": 0
+      },
+      {
+        "name": "2023-02",
+        "count": 0
+      },
+      {
+        "name": "2023-03",
+        "count": 0
+      },
+      {
+        "name": "2023-04",
+        "count": 0
+      },
+      {
+        "name": "2023-05",
+        "count": 0
+      },
+      {
+        "name": "2023-06",
+        "count": 0
+      },
+      {
+        "name": "2023-07",
+        "count": 0
+      },
+      {
+        "name": "2023-08",
+        "count": 0
+      },
+      {
+        "name": "2023-09",
+        "count": 0
+      },
+      {
+        "name": "2023-10",
+        "count": 0
+      },
+      {
+        "name": "2023-11",
+        "count": 0
+      },
+      {
+        "name": "2023-12",
+        "count": 0
+      },
+      {
+        "name": "2024-01",
+        "count": 0
+      },
+      {
+        "name": "2024-02",
+        "count": 0
+      },
+      {
+        "name": "2024-03",
+        "count": 0
+      },
+      {
+        "name": "2024-04",
+        "count": 0
+      },
+      {
+        "name": "2024-05",
+        "count": 0
+      },
+      {
+        "name": "2024-06",
+        "count": 0
+      },
+      {
+        "name": "2024-07",
+        "count": 0
+      },
+      {
+        "name": "2024-08",
+        "count": 0
+      },
+      {
+        "name": "2024-09",
+        "count": 0
+      },
+      {
+        "name": "2024-10",
+        "count": 0
+      },
+      {
+        "name": "2024-11",
+        "count": 2
+      },
+      {
+        "name": "2024-12",
+        "count": 0
+      },
+      {
+        "name": "2025-01",
+        "count": 0
+      },
+      {
+        "name": "2025-02",
+        "count": 1
+      },
+      {
+        "name": "2025-03",
+        "count": 2
+      },
+      {
+        "name": "2025-04",
+        "count": 1
+      },
+      {
+        "name": "2025-05",
+        "count": 4
+      },
+      {
+        "name": "2025-06",
+        "count": 2
+      },
+      {
+        "name": "2025-07",
+        "count": 1
+      },
+      {
+        "name": "2025-08",
+        "count": 5
+      },
+      {
+        "name": "2025-09",
+        "count": 5
+      },
+      {
+        "name": "2025-10",
+        "count": 9
+      },
+      {
+        "name": "2025-11",
+        "count": 2
+      },
+      {
+        "name": "2025-12",
+        "count": 1
+      },
+      {
+        "name": "2026-01",
+        "count": 4
+      },
+      {
+        "name": "2026-02",
+        "count": 1
+      }
+    ]
+  }
+]

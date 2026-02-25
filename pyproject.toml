@@ -1,0 +1,33 @@
+[project]
+name = "dccempleo-analytics"
+version = "0.1.0"
+description = "Analisis de ofertas en DCCEmpleoSinFiltro con export estatico en Reflex."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+  "baml-py>=0.68.0",
+  "httpx>=0.28.1",
+  "pydantic>=2.10.6",
+  "python-dotenv>=1.0.1",
+  "reflex>=0.8.7",
+  "telethon>=1.38.1",
+]
+
+[dependency-groups]
+dev = [
+  "ruff>=0.9.7",
+  "ty>=0.0.1a16",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[tool.ty.environment]
+python = "./.venv"
