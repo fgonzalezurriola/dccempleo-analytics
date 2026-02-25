@@ -1,0 +1,419 @@
+/* ═══════════════════════════════════════════════════════════════
+   ORIGAMI PAPERCRAFT — DCC Empleo Analytics
+   A warm, tactile aesthetic: kraft-paper tones, folded edges,
+   inset shadows that simulate layered paper sheets.
+   ═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap');
+
+:root {
+  /* paper palette */
+  --kraft:       #e8dcc8;
+  --kraft-light: #f2ebe0;
+  --kraft-dark:  #c9b99a;
+  --cream:       #faf6f0;
+  --ink:         #2c2418;
+  --ink-light:   #5c4f3a;
+  --ink-muted:   #8a7d6b;
+  --fold:        rgba(0,0,0,0.06);
+  --fold-dark:   rgba(0,0,0,0.12);
+
+  /* accent palette — warm terracotta + sage */
+  --terracotta:    #c4654a;
+  --terracotta-bg: #c4654a18;
+  --sage:          #6b8f71;
+  --sage-bg:       #6b8f7118;
+  --ochre:         #c4944a;
+  --ochre-bg:      #c4944a18;
+  --slate-blue:    #5b7b8f;
+  --slate-blue-bg: #5b7b8f18;
+
+  /* chart colors */
+  --chart-1: #c4654a;
+  --chart-2: #6b8f71;
+  --chart-3: #c4944a;
+  --chart-4: #5b7b8f;
+  --chart-5: #8f6b7b;
+  --chart-6: #7b8f5b;
+  --chart-7: #4a6bc4;
+  --chart-8: #c46ba0;
+
+  /* typography */
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  /* spacing */
+  --gap:  1.5rem;
+  --gap-lg: 3rem;
+
+  /* paper effect */
+  --paper-shadow:
+    inset 0  2px 4px rgba(255,255,255,0.5),
+    inset 0 -1px 2px rgba(0,0,0,0.04),
+    0 1px 3px rgba(0,0,0,0.08),
+    0 4px 12px rgba(0,0,0,0.04);
+  --paper-shadow-hover:
+    inset 0  2px 4px rgba(255,255,255,0.6),
+    inset 0 -1px 2px rgba(0,0,0,0.06),
+    0 2px 8px rgba(0,0,0,0.12),
+    0 8px 24px rgba(0,0,0,0.06);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--kraft);
+  /* Subtle paper texture via repeating gradient */
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.008) 2px,
+      rgba(0,0,0,0.008) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(0,0,0,0.005) 2px,
+      rgba(0,0,0,0.005) 4px
+    );
+  min-height: 100vh;
+  line-height: 1.6;
+}
+
+/* ─── LAYOUT ────────────────────────────────── */
+
+.page-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem var(--gap) 4rem;
+}
+
+/* ─── HEADER ────────────────────────────────── */
+
+.site-header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+  position: relative;
+}
+
+.site-header::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: var(--terracotta);
+  margin: 1.5rem auto 0;
+  border-radius: 2px;
+}
+
+.site-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  font-weight: 400;
+}
+
+.site-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+  margin-top: 0.5rem;
+  font-weight: 400;
+}
+
+.site-meta {
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+  margin-top: 0.3rem;
+}
+
+/* ─── PAPER CARD ────────────────────────────── */
+
+.paper-card {
+  background: var(--cream);
+  border: 1px solid var(--kraft-dark);
+  border-radius: 3px;
+  padding: var(--gap);
+  box-shadow: var(--paper-shadow);
+  position: relative;
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.paper-card:hover {
+  box-shadow: var(--paper-shadow-hover);
+  transform: translateY(-1px);
+}
+
+/* folded corner effect */
+.paper-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 24px;
+  height: 24px;
+  background: linear-gradient(
+    225deg,
+    var(--kraft) 0%,
+    var(--kraft) 50%,
+    var(--kraft-dark) 50%,
+    var(--kraft-light) 51%,
+    var(--cream) 100%
+  );
+  border-bottom-left-radius: 4px;
+  z-index: 1;
+}
+
+/* ─── SECTION TITLES ────────────────────────── */
+
+.section-header {
+  margin-bottom: 1.5rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  color: var(--ink);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.section-description {
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  margin-top: 0.25rem;
+  max-width: 600px;
+}
+
+/* ─── CHART CARD ────────────────────────────── */
+
+.chart-card {
+  background: var(--cream);
+  border: 1px solid var(--kraft-dark);
+  border-radius: 3px;
+  padding: 1.25rem;
+  box-shadow: var(--paper-shadow);
+  position: relative;
+}
+
+.chart-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(
+    225deg,
+    var(--kraft) 0%,
+    var(--kraft) 50%,
+    var(--kraft-dark) 50%,
+    var(--kraft-light) 51%,
+    var(--cream) 100%
+  );
+  border-bottom-left-radius: 3px;
+  z-index: 1;
+}
+
+.chart-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--ink);
+  font-weight: 400;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── FILTER BAR ────────────────────────────── */
+
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--ink-muted);
+  font-weight: 500;
+  margin-right: 0.25rem;
+}
+
+.filter-btn {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  padding: 0.35rem 0.85rem;
+  border: 1px solid var(--kraft-dark);
+  border-radius: 2px;
+  background: var(--cream);
+  color: var(--ink-light);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  font-weight: 400;
+}
+
+.filter-btn:hover {
+  background: var(--kraft-light);
+  border-color: var(--ink-muted);
+}
+
+.filter-btn.active {
+  background: var(--ink);
+  color: var(--cream);
+  border-color: var(--ink);
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.2);
+  font-weight: 500;
+}
+
+.filter-btn.preview {
+  font-style: italic;
+}
+
+.filter-btn.preview::after {
+  content: ' *';
+  font-size: 0.7em;
+  opacity: 0.6;
+}
+
+/* ─── GRID LAYOUTS ──────────────────────────── */
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--gap);
+}
+
+.charts-grid-wide {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--gap);
+}
+
+.charts-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap);
+}
+
+@media (max-width: 900px) {
+  .charts-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── KPI STRIP ─────────────────────────────── */
+
+.kpi-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.kpi-chip {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  background: var(--cream);
+  border: 1px solid var(--kraft-dark);
+  border-radius: 2px;
+  padding: 0.4rem 0.85rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.kpi-value {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.kpi-label {
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ─── DIVIDER ───────────────────────────────── */
+
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    var(--kraft-dark) 20%,
+    var(--kraft-dark) 80%,
+    transparent 100%
+  );
+  margin: var(--gap-lg) 0;
+}
+
+/* ─── FOOTER ────────────────────────────────── */
+
+.site-footer {
+  text-align: center;
+  padding: 2rem 0 1rem;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.site-footer a {
+  color: var(--terracotta);
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ─── EMPTY STATE ───────────────────────────── */
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--ink-muted);
+  font-size: 0.9rem;
+  font-style: italic;
+}
+
+/* ─── SCROLLBAR ─────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--kraft-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--kraft-dark);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ink-muted);
+}

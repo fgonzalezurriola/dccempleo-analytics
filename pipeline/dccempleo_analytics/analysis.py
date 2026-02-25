@@ -363,6 +363,240 @@ def _counter_to_chart_data(counter: Counter[str], top_n: int = 20) -> list[dict[
     return [{"name": key, "count": value} for key, value in counter.most_common(top_n)]
 
 
+# ---------------------------------------------------------------------------
+# Web data generation (pre-computed JSON for Astro frontend)
+# ---------------------------------------------------------------------------
+
+YEAR_FILTERS = ["all", "2023", "2024", "2025", "2026"]
+SENIORITY_FILTERS = ["all", "practice", "junior", "semi_senior", "senior"]
+
+_SENIORITY_MAP: dict[str, str] = {
+    "practice": "PRACTICE",
+    "junior": "JUNIOR",
+    "semi_senior": "SEMI_SENIOR",
+    "senior": "SENIOR",
+}
+
+
+def _extract_year(date_utc: str) -> str:
+    if not date_utc or date_utc == "unknown":
+        return "unknown"
+    return date_utc[:4]
+
+
+def _filter_messages(
+    messages: list[dict[str, Any]],
+    year: str,
+    seniority: str,
+) -> list[dict[str, Any]]:
+    filtered = messages
+    if year != "all":
+        filtered = [m for m in filtered if _extract_year(m.get("date_utc", "")) == year]
+    if seniority != "all":
+        bucket_value = _SENIORITY_MAP.get(seniority, seniority.upper())
+        filtered = [
+            m for m in filtered if str(m.get("seniority_bucket", "")).upper() == bucket_value
+        ]
+    return filtered
+
+
+def _build_section1(messages: list[dict[str, Any]]) -> dict[str, Any]:
+    lang_counter: Counter[str] = Counter()
+    db_counter: Counter[str] = Counter()
+    cloud_counter: Counter[str] = Counter()
+
+    for msg in messages:
+        for lang in set(msg.get("languages") or []):
+            lang_counter[lang] += 1
+        for db in set(msg.get("databases") or []):
+            db_counter[db] += 1
+        for cloud in set(msg.get("clouds") or []):
+            cloud_counter[cloud] += 1
+
+    return {
+        "total": len(messages),
+        "languages": _counter_to_chart_data(lang_counter, top_n=15),
+        "databases": _counter_to_chart_data(db_counter, top_n=15),
+        "clouds": _counter_to_chart_data(cloud_counter, top_n=10),
+    }
+
+
+def _build_ai_tools_timeline(messages: list[dict[str, Any]]) -> dict[str, Any]:
+    monthly_tool_counter: dict[str, Counter[str]] = {}
+    all_tools: set[str] = set()
+
+    for msg in messages:
+        month = msg.get("month", "unknown")
+        if month == "unknown":
+            continue
+        tools = msg.get("ai_dev_tools") or []
+        for tool in set(tools):
+            all_tools.add(tool)
+            if month not in monthly_tool_counter:
+                monthly_tool_counter[month] = Counter()
+            monthly_tool_counter[month][tool] += 1
+
+    months_sorted = sorted(monthly_tool_counter.keys())
+    # Only include months from when first tool appeared
+    first_month = None
+    for m in months_sorted:
+        if sum(monthly_tool_counter[m].values()) > 0:
+            first_month = m
+            break
+    if first_month:
+        months_sorted = [m for m in months_sorted if m >= first_month]
+
+    tools_sorted = sorted(all_tools)
+    tools_data: dict[str, list[int]] = {}
+    for tool in tools_sorted:
+        tools_data[tool] = [
+            monthly_tool_counter.get(m, Counter()).get(tool, 0) for m in months_sorted
+        ]
+
+    # Also build total per month
+    total_per_month = [sum(monthly_tool_counter.get(m, Counter()).values()) for m in months_sorted]
+
+    return {
+        "months": months_sorted,
+        "tools": tools_data,
+        "total_per_month": total_per_month,
+    }
+
+
+def _build_monthly_volume(messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    monthly: Counter[str] = Counter()
+    for msg in messages:
+        month = msg.get("month", "unknown")
+        if month != "unknown":
+            monthly[month] += 1
+    return [{"month": m, "count": monthly[m]} for m in sorted(monthly)]
+
+
+def _build_seniority_shift(messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    year_seniority: dict[str, Counter[str]] = {}
+    for msg in messages:
+        year = _extract_year(msg.get("date_utc", ""))
+        if year == "unknown":
+            continue
+        bucket = str(msg.get("seniority_bucket", "UNKNOWN")).upper()
+        if year not in year_seniority:
+            year_seniority[year] = Counter()
+        year_seniority[year][bucket] += 1
+
+    result = []
+    for year in sorted(year_seniority):
+        row: dict[str, Any] = {"year": year, "total": sum(year_seniority[year].values())}
+        for bucket in ["PRACTICE", "JUNIOR", "SEMI_SENIOR", "SENIOR", "UNKNOWN"]:
+            row[bucket.lower()] = year_seniority[year].get(bucket, 0)
+        result.append(row)
+    return result
+
+
+def _build_tech_trends(messages: list[dict[str, Any]], top_n: int = 8) -> dict[str, Any]:
+    # Count languages per year
+    year_lang: dict[str, Counter[str]] = {}
+    for msg in messages:
+        year = _extract_year(msg.get("date_utc", ""))
+        if year == "unknown":
+            continue
+        if year not in year_lang:
+            year_lang[year] = Counter()
+        for lang in set(msg.get("languages") or []):
+            year_lang[year][lang] += 1
+
+    # Find top N languages across all years
+    total_lang: Counter[str] = Counter()
+    for counter in year_lang.values():
+        total_lang.update(counter)
+    top_langs = [name for name, _ in total_lang.most_common(top_n)]
+
+    years_sorted = sorted(year_lang.keys())
+    technologies: dict[str, list[int]] = {}
+    for lang in top_langs:
+        technologies[lang] = [year_lang.get(y, Counter()).get(lang, 0) for y in years_sorted]
+
+    return {"years": years_sorted, "technologies": technologies}
+
+
+def generate_web_data(
+    messages: list[dict[str, Any]],
+    output_dir: Path,
+) -> None:
+    """Generate all pre-computed JSON files for the Astro frontend."""
+    import json
+
+    section1_dir = output_dir / "section1"
+    section2_dir = output_dir / "section2"
+    section1_dir.mkdir(parents=True, exist_ok=True)
+    section2_dir.mkdir(parents=True, exist_ok=True)
+
+    # Section 1: year x seniority combinations
+    for year in YEAR_FILTERS:
+        for seniority in SENIORITY_FILTERS:
+            filtered = _filter_messages(messages, year, seniority)
+            data = _build_section1(filtered)
+            filename = f"{year}_{seniority}.json"
+            path = section1_dir / filename
+            with path.open("w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2)
+
+    # Section 2: insights (always use all messages)
+    ai_timeline = _build_ai_tools_timeline(messages)
+    monthly_vol = _build_monthly_volume(messages)
+    seniority_shift = _build_seniority_shift(messages)
+    tech_trends = _build_tech_trends(messages)
+
+    for filename, data in [
+        ("ai_tools_timeline.json", ai_timeline),
+        ("monthly_volume.json", monthly_vol),
+        ("seniority_shift.json", seniority_shift),
+        ("tech_trends.json", tech_trends),
+    ]:
+        path = section2_dir / filename
+        with path.open("w", encoding="utf-8") as f:
+            json.dump(data, f, ensure_ascii=False, indent=2)
+
+    # Metrics summary
+    total = len(messages)
+    entry_level = sum(
+        1 for m in messages if str(m.get("seniority_bucket", "")).upper() in {"PRACTICE", "JUNIOR"}
+    )
+    ai_tools_count = sum(1 for m in messages if m.get("ai_dev_tools"))
+
+    months_all = sorted({m.get("month", "unknown") for m in messages} - {"unknown"})
+    date_span = f"{months_all[0]} a {months_all[-1]}" if months_all else "sin datos"
+
+    years_summary: dict[str, dict[str, int]] = {}
+    for year in YEAR_FILTERS:
+        filtered = _filter_messages(messages, year, "all")
+        yr_entry = sum(
+            1
+            for m in filtered
+            if str(m.get("seniority_bucket", "")).upper() in {"PRACTICE", "JUNIOR"}
+        )
+        years_summary[year] = {"total": len(filtered), "entry_level": yr_entry}
+
+    metrics = {
+        "generated_at_utc": datetime.now(UTC).isoformat().replace("+00:00", "Z"),
+        "total_messages": total,
+        "entry_level_messages": entry_level,
+        "entry_level_share_percent": round((entry_level / total) * 100, 2) if total else 0,
+        "messages_with_ai_dev_tools": ai_tools_count,
+        "ai_dev_tools_share_percent": round((ai_tools_count / total) * 100, 2) if total else 0,
+        "date_span": date_span,
+        "years": years_summary,
+    }
+
+    metrics_path = output_dir / "metrics.json"
+    with metrics_path.open("w", encoding="utf-8") as f:
+        json.dump(metrics, f, ensure_ascii=False, indent=2)
+
+    print(
+        f"Web data generada: {output_dir} ({len(list(section1_dir.glob('*.json')))} section1 + "
+        f"{len(list(section2_dir.glob('*.json')))} section2 files)"
+    )
+
+
 def analyze_messages(messages: list[dict[str, Any]], source_path: Path) -> dict[str, Any]:
     monthly_counter: Counter[str] = Counter()
     seniority_counter: Counter[str] = Counter()

@@ -3,6 +3,14 @@ assets/external/
 *.db
 .states
 .web
+node_modules/
+.astro/
+public/data/
+pipeline/data/
+pipeline/.env
+pipeline/dccsinfiltro.session
+pipeline/.states/
+pipeline/assets/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]

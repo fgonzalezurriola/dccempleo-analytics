@@ -1,95 +1,98 @@
 # dccempleo-analytics
 
-Pipeline para:
-1. Scrapear `DCCEmpleoSinFiltro`.
-2. Etiquetar ofertas con BAML + OpenCode.
-3. Generar dashboard estático en `dist/`.
+Dashboard de ofertas laborales tech en Chile basado en el canal [DCCEmpleoSinFiltro](https://t.me/DCCEmpleoSinFiltro).
 
-## 1) Setup
+## Estructura
+
+```
+/                           <- Astro frontend (Vercel auto-detecta)
+├── src/                    <- Componentes React, layouts, pages, CSS
+├── public/data/            <- JSON pre-computados (generados por pipeline)
+├── astro.config.mjs
+├── package.json
+└── pipeline/               <- Todo el codigo Python
+    ├── pyproject.toml
+    ├── scripts/            <- Scraping, labeling, analisis, build
+    ├── dccempleo_analytics/
+    ├── baml_client/
+    ├── baml_src/
+    ├── tests/
+    └── data/               <- Raw + processed data
+```
+
+## Frontend (Astro + React + ECharts)
 
 ```bash
+npm install
+npm run dev          # http://localhost:4321
+npm run build        # genera dist/
+```
+
+## Pipeline Python
+
+```bash
+cd pipeline
 cp .env.example .env
 uv sync
 ```
 
-Instalar OpenCode CLI:
-
-```bash
-curl -fsSL https://opencode.ai/install | bash
-opencode models | grep free
-```
-
-## 2) Configurar `.env`
-
-Variables mínimas a revisar:
-
-- Telegram: `TELEGRAM_API_ID`, `TELEGRAM_API_HASH`, `TELEGRAM_PHONE`
-- Fecha de export: `EXPORT_SINCE=2023-01-01`
-- Modelo: `OPENCODE_MODEL=opencode/trinity-large-preview-free`
-- Password server: `OPENCODE_SERVER_PASSWORD=password`
-
-Todo el comportamiento de labeling se controla por env vars (`LABEL_*`).
-`--skip-build` se mantiene solo por compatibilidad y ya no es necesario.
-Si una fila queda con `status=error`, por defecto se reintenta en corridas futuras (`LABEL_RETRY_ERRORS=1`).
-Si se detecta rate limit del proveedor, el labeling aborta inmediatamente por defecto (`LABEL_ABORT_ON_RATE_LIMIT=1`).
-
-## 3) Scrapear Telegram
+### 1) Scrapear Telegram
 
 ```bash
 uv run python scripts/scrape_telegram.py
 ```
 
-Salida esperada: `data/raw/telegram_export.jsonl`
-
-## 4) Levantar servicios (2 terminales)
+### 2) Levantar servicios (2 terminales)
 
 Terminal A:
-
 ```bash
 OPENCODE_SERVER_PASSWORD=password opencode serve --hostname 127.0.0.1 --port 4099
 ```
 
 Terminal B:
-
 ```bash
 uv run python scripts/opencode_openai_proxy.py
 ```
 
-## 5) Procesar con LLM
-
-Terminal C:
+### 3) Procesar con LLM
 
 ```bash
 uv run python scripts/process_with_llm.py
 ```
 
-Esto ejecuta:
-- labeling (`data/processed/labeled_messages.jsonl`)
-- análisis (`data/processed/insights.json`)
+Ejecuta labeling + analisis + generacion de datos web en `public/data/`.
 
-## 6) Build web (Reflex export)
+### 4) Build estatico
 
 ```bash
 uv run python scripts/build_web.py
 ```
 
-## 7) Flujo combinado (opcional)
+Ejecuta `astro build` y genera `dist/` en la raiz del repo.
+
+### 5) Pipeline completo
 
 ```bash
-uv run python scripts/process_with_llm.py && uv run python scripts/build_web.py
+uv run python scripts/pipeline.py
 ```
 
-## 8) Prueba corta (opcional)
-
-```bash
-LABEL_MAX_MESSAGES=5 LABEL_BATCH_SIZE=2 uv run python scripts/process_with_llm.py
-```
+Flags: `--skip-scrape`, `--skip-labeling`, `--skip-dist`.
 
 ## Deploy
 
-Publica `dist/` como sitio estático (Vercel/Netlify/Nginx).
+Vercel detecta Astro automaticamente en la raiz. Solo conecta el repo.
+
+Los JSON de `public/data/` deben estar generados antes del build (correr el pipeline primero).
+
+## Stack
+
+- **Astro** — generador de sitios estaticos
+- **React** — componentes interactivos (islands)
+- **ECharts** — graficos
+- **Motion** (v12) — animaciones
+- **Python** — scraping, labeling con LLM (BAML), analisis
 
 ## Notas
 
-- Reglas de normalización y edge cases: `EDGE_CASES.md`.
-- Categoría dev-AI incluida: Codex, Cursor, Claude Code, GitHub Copilot.
+- Reglas de normalizacion y edge cases: `EDGE_CASES.md`
+- Categoria dev-AI: Codex, Cursor, Claude Code, GitHub Copilot

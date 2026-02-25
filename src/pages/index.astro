@@ -1,0 +1,25 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <div id="dashboard-root">
+    <noscript>
+      <div class="empty-state">
+        Este dashboard requiere JavaScript para funcionar. Por favor habilita JavaScript en tu navegador.
+      </div>
+    </noscript>
+  </div>
+</Layout>
+
+<script>
+  import { createElement } from 'react';
+  import { createRoot } from 'react-dom/client';
+  import Dashboard from '../components/Dashboard';
+
+  const container = document.getElementById('dashboard-root');
+  if (container) {
+    const root = createRoot(container);
+    root.render(createElement(Dashboard));
+  }
+</script>

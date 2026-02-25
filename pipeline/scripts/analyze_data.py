@@ -10,7 +10,7 @@ from _bootstrap import ensure_project_root_on_path
 
 ensure_project_root_on_path()
 
-from dccempleo_analytics.analysis import analyze_messages, process_message
+from dccempleo_analytics.analysis import analyze_messages, generate_web_data, process_message
 
 
 def _read_jsonl(path: Path) -> list[dict[str, Any]]:
@@ -85,6 +85,12 @@ def run_analysis() -> Path | None:
     _write_jsonl(messages_path, messages)
     _write_json(charts_path, insights["charts"])
     _write_json(metrics_path, {"kpis": insights["kpis"], "source": insights["source"]})
+
+    # Generate pre-computed web data for Astro frontend (public/data at repo root)
+    repo_root = Path(__file__).resolve().parents[2]
+    default_web_data = str(repo_root / "public" / "data")
+    web_data_dir = Path(os.environ.get("WEB_DATA_DIR", default_web_data))
+    generate_web_data(messages, web_data_dir)
 
     print(f"Analisis listo: {insights_path}")
     return insights_path
