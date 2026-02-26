@@ -8,12 +8,17 @@ import {
 } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 import type { AiToolsTimeline, MonthlyVolume, SeniorityShiftYear, TechTrends } from './types';
-import { COLORS } from './BarChart';
+import { COLORS, TECH_COLORS } from './BarChart';
 
 echarts.use([EBarChart, ELineChart, GridComponent, TooltipComponent, LegendComponent, CanvasRenderer]);
 
+/** Resolve a color for a tech/tool name, falling back to positional palette */
+function getTechColor(name: string, index: number): string {
+  return TECH_COLORS[name.toLowerCase()] ?? COLORS[index % COLORS.length];
+}
+
 const chartTextStyle = {
-  fontFamily: "'DM Sans', system-ui, sans-serif",
+  fontFamily: "'Geist', Arial, system-ui, sans-serif",
   color: '#5c4f3a',
 };
 
@@ -31,6 +36,7 @@ const toolNameMap: Record<string, string> = {
   codex: 'Codex',
   antigravity: 'Antigravity',
   'claude desktop': 'Claude Desktop',
+  'herramientas de ia': '"Herramientas de IA"',
 };
 
 /* ═══════════════ AI Tools Timeline ═══════════════ */
@@ -82,12 +88,12 @@ export function AiToolsChart({ data }: { data: AiToolsTimeline | null }) {
       smooth: true,
       symbol: 'circle',
       symbolSize: 5,
-      lineStyle: { width: 2.5, color: COLORS[i % COLORS.length] },
-      itemStyle: { color: COLORS[i % COLORS.length] },
+      lineStyle: { width: 2.5, color: getTechColor(tool, i) },
+      itemStyle: { color: getTechColor(tool, i) },
       areaStyle: {
         color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-          { offset: 0, color: COLORS[i % COLORS.length] + '30' },
-          { offset: 1, color: COLORS[i % COLORS.length] + '05' },
+          { offset: 0, color: getTechColor(tool, i) + '30' },
+          { offset: 1, color: getTechColor(tool, i) + '05' },
         ]),
       },
     })),
@@ -175,7 +181,7 @@ export function SeniorityShiftChart({ data }: { data: SeniorityShiftYear[] | nul
   }
 
   const buckets = [
-    { key: 'practice', label: 'Practice' },
+    { key: 'practice', label: 'Práctica' },
     { key: 'junior', label: 'Junior' },
     { key: 'semi_senior', label: 'Semi-Senior' },
     { key: 'senior', label: 'Senior' },
@@ -289,8 +295,8 @@ export function TechTrendsChart({ data }: { data: TechTrends | null }) {
       smooth: true,
       symbol: 'circle',
       symbolSize: 6,
-      lineStyle: { width: 2.5, color: COLORS[i % COLORS.length] },
-      itemStyle: { color: COLORS[i % COLORS.length] },
+      lineStyle: { width: 2.5, color: getTechColor(tech, i) },
+      itemStyle: { color: getTechColor(tech, i) },
     })),
     animationDuration: 800,
   };

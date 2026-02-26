@@ -188,10 +188,17 @@ AI_DEV_TOOL_ALIASES: dict[str, str] = {
     "codex": "codex",
     "cursor": "cursor",
     "claude code": "claude code",
+    "claudecode": "claude code",
+    "claude/code": "claude code",
+    "claude-code": "claude code",
     "claude desktop": "claude desktop",
+    "claude/desktop": "claude desktop",
+    "claude-desktop": "claude desktop",
     "github copilot": "github copilot",
     "antigravity": "antigravity",
 }
+
+AI_TOOLS_PHRASE_RE = re.compile(r"(?<![\w])herramientas?(?![\w])\s+de\s+ia(?![\w])")
 
 EMAIL_RE = re.compile(r"\b[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Za-z]{2,}\b")
 URL_RE = re.compile(r"(https?://[^\s]+|www\.[^\s]+)")
@@ -210,8 +217,10 @@ def anonymize_text(raw_text: str) -> str:
 
 
 def _contains_phrase(text_lower: str, phrase: str) -> bool:
+    if phrase == "c":
+        return re.search(r"(?<![\w])c(?![\w+#/])", text_lower) is not None
     escaped = re.escape(phrase)
-    pattern = rf"(?<![a-z0-9]){escaped}(?![a-z0-9])"
+    pattern = rf"(?<![\w]){escaped}(?![\w])"
     return re.search(pattern, text_lower) is not None
 
 
@@ -284,6 +293,22 @@ def extract_ai_dev_tools(text: str) -> list[str]:
     for alias in sorted(AI_DEV_TOOL_ALIASES, key=len, reverse=True):
         if _contains_phrase(text_lower, alias):
             found.add(AI_DEV_TOOL_ALIASES[alias])
+
+    github_copilot_context = re.search(
+        r"(?<![\w])github(?![\w])[\s,./:-]{0,12}(?<![\w])copilot(?![\w])|"
+        r"(?<![\w])copilot(?![\w])[\s,./:-]{0,12}(?<![\w])github(?![\w])",
+        text_lower,
+    )
+    if github_copilot_context:
+        found.add("github copilot")
+
+    if re.search(r"(?<![\w])claude[\s,./:_-]{0,6}code(?![\w])", text_lower):
+        found.add("claude code")
+    if re.search(r"(?<![\w])claude[\s,./:_-]{0,6}desktop(?![\w])", text_lower):
+        found.add("claude desktop")
+    if AI_TOOLS_PHRASE_RE.search(text_lower):
+        found.add("herramientas de ia")
+
     return sorted(found)
 
 

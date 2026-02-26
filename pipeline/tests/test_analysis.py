@@ -37,6 +37,18 @@ class AnalysisTests(unittest.TestCase):
         self.assertIn("aws", stack)
         self.assertIn("docker", stack)
 
+    def test_extract_tech_stack_does_not_infer_c_from_csharp_or_c_slash(self) -> None:
+        stack_csharp = extract_tech_stack("Stack: C#, .NET y SQL Server.")
+        self.assertIn("c#", stack_csharp)
+        self.assertNotIn("c", stack_csharp)
+
+        stack_c_slash = extract_tech_stack("Backend c/ experiencia en Python y Docker.")
+        self.assertNotIn("c", stack_c_slash)
+
+    def test_extract_tech_stack_does_not_infer_c_from_spanish_words(self) -> None:
+        stack = extract_tech_stack("Buscamos dev para construir soluciones, como parte del equipo.")
+        self.assertNotIn("c", stack)
+
     def test_process_message_uses_label_if_available(self) -> None:
         row = {
             "date_utc": "2025-01-01T00:00:00Z",
@@ -96,6 +108,30 @@ class AnalysisTests(unittest.TestCase):
         self.assertIn("github copilot", tools)
         self.assertIn("claude code", tools)
         self.assertNotIn("copilot", tools)
+
+    def test_extract_ai_dev_tools_detects_github_copilot_with_punctuation(self) -> None:
+        text = "Cuentas corporativas para Github, Copilot/Cursor y otras herramientas."
+        tools = extract_ai_dev_tools(text)
+        self.assertIn("github copilot", tools)
+        self.assertIn("cursor", tools)
+
+    def test_extract_ai_dev_tools_detects_ab_separator_forms(self) -> None:
+        text = "Stack AI: Claude/Code, Claude-Desktop y Github/Copilot."
+        tools = extract_ai_dev_tools(text)
+        self.assertIn("claude code", tools)
+        self.assertIn("claude desktop", tools)
+        self.assertIn("github copilot", tools)
+
+    def test_extract_ai_dev_tools_ignores_bare_copilot_brand(self) -> None:
+        text = "Buscamos iOS dev para Copilot Money, startup fintech."
+        tools = extract_ai_dev_tools(text)
+        self.assertNotIn("github copilot", tools)
+
+    def test_extract_ai_dev_tools_detects_herramientas_de_ia_singular_and_plural(self) -> None:
+        plural = extract_ai_dev_tools("Buscamos perfil con uso de herramientas de IA en el flujo.")
+        singular = extract_ai_dev_tools("Se valora herramienta de IA para productividad.")
+        self.assertIn("herramientas de ia", plural)
+        self.assertIn("herramientas de ia", singular)
 
 
 if __name__ == "__main__":

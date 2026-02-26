@@ -21,16 +21,16 @@ import type {
 /* ═══════════════ Constants ═══════════════ */
 
 const YEARS: { value: YearFilter; label: string; preview?: boolean }[] = [
-  { value: 'all', label: 'All' },
+  { value: 'all', label: 'Todos' },
   { value: '2023', label: '2023' },
   { value: '2024', label: '2024' },
   { value: '2025', label: '2025' },
-  { value: '2026', label: '2026 (Preview)', preview: true },
+  { value: '2026', label: '2026 (Parcial)', preview: true },
 ];
 
 const SENIORITIES: { value: SeniorityFilter; label: string }[] = [
-  { value: 'all', label: 'All' },
-  { value: 'practice', label: 'Practice' },
+  { value: 'all', label: 'Todos' },
+  { value: 'practice', label: 'Práctica' },
   { value: 'junior', label: 'Junior' },
   { value: 'semi_senior', label: 'Semi-Senior' },
   { value: 'senior', label: 'Senior' },
@@ -103,6 +103,52 @@ export default function Dashboard() {
     });
   }, []);
 
+  // Filter out 2020 and 2026 from Insights charts (insufficient data)
+  const EXCLUDED_YEARS = new Set(['2020', '2026']);
+
+  const filteredSeniorityShift = seniorityShift?.filter(
+    (d) => !EXCLUDED_YEARS.has(d.year),
+  ) ?? null;
+
+  const filteredTechTrends: TechTrends | null = techTrends
+    ? (() => {
+      const validIdx = techTrends.years
+        .map((y, i) => ({ y, i }))
+        .filter(({ y }) => !EXCLUDED_YEARS.has(y));
+      return {
+        years: validIdx.map(({ y }) => y),
+        technologies: Object.fromEntries(
+          Object.entries(techTrends.technologies).map(([tech, values]) => [
+            tech,
+            validIdx.map(({ i }) => values[i]),
+          ]),
+        ),
+      };
+    })()
+    : null;
+
+  const filteredMonthlyVolume = monthlyVolume?.filter(
+    (d) => !d.month.startsWith('2020') && !d.month.startsWith('2026'),
+  ) ?? null;
+
+  const filteredAiTools: AiToolsTimeline | null = aiTools
+    ? (() => {
+      const validIdx = aiTools.months
+        .map((m, i) => ({ m, i }))
+        .filter(({ m }) => !m.startsWith('2020') && !m.startsWith('2026'));
+      return {
+        months: validIdx.map(({ m }) => m),
+        tools: Object.fromEntries(
+          Object.entries(aiTools.tools).map(([tool, values]) => [
+            tool,
+            validIdx.map(({ i }) => values[i]),
+          ]),
+        ),
+        total_per_month: validIdx.map(({ i }) => aiTools.total_per_month[i]),
+      };
+    })()
+    : null;
+
   // KPI for current year
   const yearMetrics = metrics?.years[year];
   const totalPosts = yearMetrics?.total ?? metrics?.total_messages ?? 0;
@@ -121,23 +167,25 @@ export default function Dashboard() {
       >
         <h1 className="site-title">DCC Empleo Analytics</h1>
         <p className="site-subtitle">
-          Ofertas laborales tech en Chile — canal DCCEmpleoSinFiltro
+          Ofertas laborales tech en Chile - canal de telegram DCCEmpleoSinFiltro
         </p>
         {metrics && (
           <p className="site-meta">{metrics.date_span} · {metrics.total_messages.toLocaleString()} publicaciones</p>
         )}
       </motion.header>
 
-      {/* ═══════════════ SECTION 1 — Mercado Laboral Tech ═══════════════ */}
+      {/* ═══════════════ SECTION 1 ═══════════════ */}
       <motion.section
         initial="hidden"
         animate="visible"
         variants={staggerContainer}
       >
         <motion.div className="section-header" variants={fadeUp} transition={{ duration: 0.4 }}>
-          <h2 className="section-title">Mercado Laboral Tech</h2>
+          <h2 className="section-title">Análisis de las ofertas de DCCEmpleoSinFiltro</h2>
           <p className="section-description">
-            Lenguajes, bases de datos y plataformas cloud más solicitadas en las ofertas laborales.
+            Nota: Este canal tiene un ambiente universitario, <br />
+            No concluyas cosas sobre la gran cantidad de ofertas a entry level. <br />
+            Hay evidencia de sobra de que el mercado junior está muy complicado.
           </p>
         </motion.div>
 
@@ -161,7 +209,7 @@ export default function Dashboard() {
           </div>
 
           <div className="filter-bar">
-            <span className="filter-label">Seniority</span>
+            <span className="filter-label">Nivel</span>
             {SENIORITIES.map((s) => (
               <button
                 key={s.value}
@@ -200,17 +248,17 @@ export default function Dashboard() {
         <motion.div className="charts-grid-3" variants={staggerContainer}>
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">Top Lenguajes</h3>
-            <BarChart data={section1?.languages ?? []} color="#c4654a" />
+            <BarChart data={section1?.languages ?? []} />
           </motion.div>
 
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">Top Bases de Datos</h3>
-            <BarChart data={section1?.databases ?? []} color="#6b8f71" />
+            <BarChart data={section1?.databases ?? []} />
           </motion.div>
 
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">Top Cloud</h3>
-            <BarChart data={section1?.clouds ?? []} color="#c4944a" />
+            <BarChart data={section1?.clouds ?? []} />
           </motion.div>
         </motion.div>
       </motion.section>
@@ -235,22 +283,22 @@ export default function Dashboard() {
         <motion.div className="charts-grid" variants={staggerContainer}>
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">AI Dev Tools</h3>
-            <AiToolsChart data={aiTools} />
+            <AiToolsChart data={filteredAiTools} />
           </motion.div>
 
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">Volumen Mensual de Publicaciones</h3>
-            <MonthlyVolumeChart data={monthlyVolume} />
+            <MonthlyVolumeChart data={filteredMonthlyVolume} />
           </motion.div>
 
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">Distribución de Seniority por Año</h3>
-            <SeniorityShiftChart data={seniorityShift} />
+            <SeniorityShiftChart data={filteredSeniorityShift} />
           </motion.div>
 
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">Tendencias Tecnológicas</h3>
-            <TechTrendsChart data={techTrends} />
+            <TechTrendsChart data={filteredTechTrends} />
           </motion.div>
         </motion.div>
       </motion.section>
