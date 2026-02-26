@@ -1,5 +1,67 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  type?: 'website' | 'article';
+  canonicalPath?: string;
+  noindex?: boolean;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
+}
+
+const {
+  title = 'DCC Empleo Analytics | Mercado laboral tech en Chile',
+  description = 'Dashboard de ofertas laborales tech en Chile basado en DCCEmpleoSinFiltro. Incluye lenguajes, bases de datos, cloud y herramientas de IA más mencionadas.',
+  image = '/favicon.ico',
+  type = 'website',
+  canonicalPath,
+  noindex = false,
+  structuredData,
+} = Astro.props as Props;
+
+const origin = (Astro.site ?? Astro.url).origin;
+const canonicalUrl = new URL(canonicalPath ?? Astro.url.pathname, `${origin}/`).toString();
+const imageUrl = new URL(image, `${origin}/`).toString();
+const robotsContent = noindex
+  ? 'noindex, nofollow'
+  : 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
+
+const defaultStructuredData: Array<Record<string, unknown>> = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'DCC Empleo Analytics',
+    url: origin,
+    inLanguage: 'es-CL',
+    description,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Dataset',
+    name: 'DCCEmpleoSinFiltro Tech Jobs Dashboard',
+    description,
+    url: canonicalUrl,
+    inLanguage: 'es-CL',
+    isAccessibleForFree: true,
+    license: 'https://opensource.org/license/mit',
+    keywords: [
+      'ofertas laborales tech chile',
+      'mercado laboral junior chile',
+      'lenguajes de programacion',
+      'bases de datos',
+      'cloud',
+      'herramientas de IA',
+    ],
+  },
+];
+
+const pageStructuredData = structuredData
+  ? Array.isArray(structuredData)
+    ? structuredData
+    : [structuredData]
+  : defaultStructuredData;
 ---
 
 <!DOCTYPE html>
@@ -7,9 +69,34 @@ import '../styles/global.css';
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DCC Empleo Analytics</title>
-    <meta name="description" content="Dashboard de ofertas laborales tech en Chile basado en DCCEmpleoSinFiltro. Lenguajes, bases de datos, cloud y herramientas AI mas solicitadas." />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="robots" content={robotsContent} />
+    <meta name="googlebot" content={robotsContent} />
+    <meta name="theme-color" content="#e8dcc8" />
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" href={canonicalUrl} hrefLang="es-cl" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content={type} />
+    <meta property="og:locale" content="es_CL" />
+    <meta property="og:site_name" content="DCC Empleo Analytics" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={imageUrl} />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={imageUrl} />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    {
+      pageStructuredData.map((schema) => (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      ))
+    }
   </head>
   <body>
     <div class="page-wrapper">

@@ -1,0 +1,153 @@
+{
+  "total": 303,
+  "languages": [
+    {
+      "name": "python",
+      "count": 121
+    },
+    {
+      "name": "javascript",
+      "count": 94
+    },
+    {
+      "name": "typescript",
+      "count": 88
+    },
+    {
+      "name": "java",
+      "count": 20
+    },
+    {
+      "name": "ruby",
+      "count": 18
+    },
+    {
+      "name": "go",
+      "count": 13
+    },
+    {
+      "name": "flutter",
+      "count": 12
+    },
+    {
+      "name": "c#",
+      "count": 6
+    },
+    {
+      "name": "c",
+      "count": 4
+    },
+    {
+      "name": "c++",
+      "count": 4
+    },
+    {
+      "name": "php",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 3
+    },
+    {
+      "name": "rust",
+      "count": 2
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 79
+    },
+    {
+      "name": "sql",
+      "count": 52
+    },
+    {
+      "name": "nosql",
+      "count": 20
+    },
+    {
+      "name": "mongodb",
+      "count": 20
+    },
+    {
+      "name": "mysql",
+      "count": 14
+    },
+    {
+      "name": "supabase",
+      "count": 9
+    },
+    {
+      "name": "bigquery",
+      "count": 7
+    },
+    {
+      "name": "firebase",
+      "count": 6
+    },
+    {
+      "name": "elasticsearch",
+      "count": 3
+    },
+    {
+      "name": "dynamodb",
+      "count": 3
+    },
+    {
+      "name": "sql server",
+      "count": 1
+    },
+    {
+      "name": "firestore",
+      "count": 1
+    },
+    {
+      "name": "cosmosdb",
+      "count": 1
+    },
+    {
+      "name": "sqlite",
+      "count": 1
+    },
+    {
+      "name": "oracle",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 100
+    },
+    {
+      "name": "gcp",
+      "count": 44
+    },
+    {
+      "name": "azure",
+      "count": 14
+    },
+    {
+      "name": "vercel",
+      "count": 8
+    },
+    {
+      "name": "cloudflare",
+      "count": 2
+    },
+    {
+      "name": "railway",
+      "count": 2
+    },
+    {
+      "name": "fly.io",
+      "count": 1
+    },
+    {
+      "name": "digitalocean",
+      "count": 1
+    }
+  ]
+}

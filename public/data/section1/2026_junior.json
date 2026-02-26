@@ -1,0 +1,41 @@
+{
+  "total": 11,
+  "languages": [
+    {
+      "name": "typescript",
+      "count": 5
+    },
+    {
+      "name": "ruby",
+      "count": 2
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 3
+    },
+    {
+      "name": "firebase",
+      "count": 1
+    },
+    {
+      "name": "mysql",
+      "count": 1
+    },
+    {
+      "name": "dynamodb",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 3
+    },
+    {
+      "name": "gcp",
+      "count": 3
+    }
+  ]
+}

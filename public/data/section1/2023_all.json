@@ -1,0 +1,149 @@
+{
+  "total": 284,
+  "languages": [
+    {
+      "name": "python",
+      "count": 93
+    },
+    {
+      "name": "javascript",
+      "count": 79
+    },
+    {
+      "name": "typescript",
+      "count": 51
+    },
+    {
+      "name": "ruby",
+      "count": 21
+    },
+    {
+      "name": "c#",
+      "count": 13
+    },
+    {
+      "name": "php",
+      "count": 9
+    },
+    {
+      "name": "java",
+      "count": 8
+    },
+    {
+      "name": "c++",
+      "count": 6
+    },
+    {
+      "name": "flutter",
+      "count": 6
+    },
+    {
+      "name": "go",
+      "count": 5
+    },
+    {
+      "name": "swift",
+      "count": 5
+    },
+    {
+      "name": "bash",
+      "count": 4
+    },
+    {
+      "name": "kotlin",
+      "count": 4
+    },
+    {
+      "name": "dart",
+      "count": 2
+    },
+    {
+      "name": "c",
+      "count": 2
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 56
+    },
+    {
+      "name": "sql",
+      "count": 50
+    },
+    {
+      "name": "mongodb",
+      "count": 13
+    },
+    {
+      "name": "mysql",
+      "count": 12
+    },
+    {
+      "name": "firebase",
+      "count": 12
+    },
+    {
+      "name": "sql server",
+      "count": 7
+    },
+    {
+      "name": "bigquery",
+      "count": 4
+    },
+    {
+      "name": "dynamodb",
+      "count": 3
+    },
+    {
+      "name": "nosql",
+      "count": 3
+    },
+    {
+      "name": "redis",
+      "count": 2
+    },
+    {
+      "name": "elasticsearch",
+      "count": 1
+    },
+    {
+      "name": "redshift",
+      "count": 1
+    },
+    {
+      "name": "sqlite",
+      "count": 1
+    },
+    {
+      "name": "oracle",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 77
+    },
+    {
+      "name": "gcp",
+      "count": 43
+    },
+    {
+      "name": "azure",
+      "count": 24
+    },
+    {
+      "name": "vercel",
+      "count": 2
+    },
+    {
+      "name": "fly.io",
+      "count": 2
+    },
+    {
+      "name": "render",
+      "count": 1
+    }
+  ]
+}

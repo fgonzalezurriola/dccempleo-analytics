@@ -1,0 +1,145 @@
+{
+  "total": 276,
+  "languages": [
+    {
+      "name": "python",
+      "count": 106
+    },
+    {
+      "name": "typescript",
+      "count": 70
+    },
+    {
+      "name": "javascript",
+      "count": 59
+    },
+    {
+      "name": "ruby",
+      "count": 24
+    },
+    {
+      "name": "flutter",
+      "count": 12
+    },
+    {
+      "name": "php",
+      "count": 12
+    },
+    {
+      "name": "c",
+      "count": 9
+    },
+    {
+      "name": "java",
+      "count": 9
+    },
+    {
+      "name": "kotlin",
+      "count": 6
+    },
+    {
+      "name": "dart",
+      "count": 4
+    },
+    {
+      "name": "go",
+      "count": 4
+    },
+    {
+      "name": "c#",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 3
+    },
+    {
+      "name": "c++",
+      "count": 3
+    },
+    {
+      "name": "swift",
+      "count": 2
+    }
+  ],
+  "databases": [
+    {
+      "name": "sql",
+      "count": 64
+    },
+    {
+      "name": "postgresql",
+      "count": 63
+    },
+    {
+      "name": "mysql",
+      "count": 20
+    },
+    {
+      "name": "dynamodb",
+      "count": 12
+    },
+    {
+      "name": "nosql",
+      "count": 10
+    },
+    {
+      "name": "mongodb",
+      "count": 9
+    },
+    {
+      "name": "firebase",
+      "count": 8
+    },
+    {
+      "name": "sql server",
+      "count": 5
+    },
+    {
+      "name": "oracle",
+      "count": 5
+    },
+    {
+      "name": "redis",
+      "count": 4
+    },
+    {
+      "name": "bigquery",
+      "count": 4
+    },
+    {
+      "name": "elasticsearch",
+      "count": 2
+    },
+    {
+      "name": "supabase",
+      "count": 1
+    },
+    {
+      "name": "mariadb",
+      "count": 1
+    },
+    {
+      "name": "redshift",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 92
+    },
+    {
+      "name": "gcp",
+      "count": 38
+    },
+    {
+      "name": "azure",
+      "count": 15
+    },
+    {
+      "name": "vercel",
+      "count": 3
+    }
+  ]
+}

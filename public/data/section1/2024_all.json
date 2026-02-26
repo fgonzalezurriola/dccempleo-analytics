@@ -1,0 +1,141 @@
+{
+  "total": 310,
+  "languages": [
+    {
+      "name": "python",
+      "count": 113
+    },
+    {
+      "name": "typescript",
+      "count": 80
+    },
+    {
+      "name": "javascript",
+      "count": 76
+    },
+    {
+      "name": "ruby",
+      "count": 27
+    },
+    {
+      "name": "flutter",
+      "count": 14
+    },
+    {
+      "name": "go",
+      "count": 11
+    },
+    {
+      "name": "php",
+      "count": 11
+    },
+    {
+      "name": "c",
+      "count": 10
+    },
+    {
+      "name": "c#",
+      "count": 5
+    },
+    {
+      "name": "java",
+      "count": 5
+    },
+    {
+      "name": "dart",
+      "count": 3
+    },
+    {
+      "name": "c++",
+      "count": 3
+    },
+    {
+      "name": "rust",
+      "count": 2
+    },
+    {
+      "name": "kotlin",
+      "count": 2
+    },
+    {
+      "name": "bash",
+      "count": 1
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 66
+    },
+    {
+      "name": "sql",
+      "count": 48
+    },
+    {
+      "name": "mongodb",
+      "count": 30
+    },
+    {
+      "name": "mysql",
+      "count": 15
+    },
+    {
+      "name": "firebase",
+      "count": 10
+    },
+    {
+      "name": "nosql",
+      "count": 10
+    },
+    {
+      "name": "redis",
+      "count": 8
+    },
+    {
+      "name": "sql server",
+      "count": 4
+    },
+    {
+      "name": "dynamodb",
+      "count": 3
+    },
+    {
+      "name": "supabase",
+      "count": 3
+    },
+    {
+      "name": "bigquery",
+      "count": 3
+    },
+    {
+      "name": "mariadb",
+      "count": 2
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 99
+    },
+    {
+      "name": "gcp",
+      "count": 50
+    },
+    {
+      "name": "azure",
+      "count": 13
+    },
+    {
+      "name": "vercel",
+      "count": 6
+    },
+    {
+      "name": "cloudflare",
+      "count": 1
+    },
+    {
+      "name": "fly.io",
+      "count": 1
+    }
+  ]
+}

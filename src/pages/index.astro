@@ -1,10 +1,46 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Dashboard from '../components/Dashboard';
+
+const pageTitle = 'DCC Empleo Analytics | Datos del mercado laboral tech en Chile';
+const pageDescription =
+  'Analiza ofertas laborales tech en Chile publicadas en DCCEmpleoSinFiltro: lenguajes, bases de datos, cloud, seniority y adopción de herramientas de IA.';
+
+const pageStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: pageTitle,
+  description: pageDescription,
+  inLanguage: 'es-CL',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'DCC Empleo Analytics',
+    url: 'https://dccempleo-analytics.vercel.app/',
+  },
+};
 ---
 
-<Layout>
-  <Dashboard client:load />
+<Layout
+  title={pageTitle}
+  description={pageDescription}
+  canonicalPath="/"
+  structuredData={pageStructuredData}
+>
+  <main>
+    <section class="seo-intro paper-card" aria-labelledby="seo-intro-title">
+      <h2 id="seo-intro-title">Qué puedes analizar en este dashboard</h2>
+      <p>
+        Este proyecto resume miles de publicaciones del canal DCCEmpleoSinFiltro para mostrar
+        tendencias del mercado laboral tech en Chile por año y por nivel de seniority.
+      </p>
+      <p>
+        Incluye top de lenguajes, bases de datos, cloud y adopción de AI Dev Tools, con filtros
+        para explorar cambios en el tiempo.
+      </p>
+    </section>
+
+    <Dashboard client:load />
+  </main>
   <noscript>
     <div class="empty-state">
       Este dashboard requiere JavaScript para funcionar. Por favor habilita JavaScript en tu navegador.

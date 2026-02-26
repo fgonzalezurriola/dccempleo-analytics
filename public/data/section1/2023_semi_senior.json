@@ -1,0 +1,133 @@
+{
+  "total": 63,
+  "languages": [
+    {
+      "name": "python",
+      "count": 22
+    },
+    {
+      "name": "javascript",
+      "count": 18
+    },
+    {
+      "name": "typescript",
+      "count": 15
+    },
+    {
+      "name": "ruby",
+      "count": 7
+    },
+    {
+      "name": "c++",
+      "count": 4
+    },
+    {
+      "name": "swift",
+      "count": 4
+    },
+    {
+      "name": "java",
+      "count": 3
+    },
+    {
+      "name": "bash",
+      "count": 2
+    },
+    {
+      "name": "kotlin",
+      "count": 2
+    },
+    {
+      "name": "go",
+      "count": 1
+    },
+    {
+      "name": "rust",
+      "count": 1
+    },
+    {
+      "name": "c#",
+      "count": 1
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 15
+    },
+    {
+      "name": "sql",
+      "count": 6
+    },
+    {
+      "name": "mysql",
+      "count": 5
+    },
+    {
+      "name": "bigquery",
+      "count": 4
+    },
+    {
+      "name": "mongodb",
+      "count": 4
+    },
+    {
+      "name": "firebase",
+      "count": 4
+    },
+    {
+      "name": "sql server",
+      "count": 3
+    },
+    {
+      "name": "dynamodb",
+      "count": 2
+    },
+    {
+      "name": "elasticsearch",
+      "count": 1
+    },
+    {
+      "name": "redshift",
+      "count": 1
+    },
+    {
+      "name": "sqlite",
+      "count": 1
+    },
+    {
+      "name": "oracle",
+      "count": 1
+    },
+    {
+      "name": "nosql",
+      "count": 1
+    },
+    {
+      "name": "redis",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 17
+    },
+    {
+      "name": "gcp",
+      "count": 14
+    },
+    {
+      "name": "azure",
+      "count": 4
+    },
+    {
+      "name": "vercel",
+      "count": 1
+    },
+    {
+      "name": "render",
+      "count": 1
+    }
+  ]
+}

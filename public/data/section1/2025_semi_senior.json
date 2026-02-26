@@ -1,0 +1,125 @@
+{
+  "total": 115,
+  "languages": [
+    {
+      "name": "typescript",
+      "count": 43
+    },
+    {
+      "name": "python",
+      "count": 35
+    },
+    {
+      "name": "javascript",
+      "count": 15
+    },
+    {
+      "name": "ruby",
+      "count": 6
+    },
+    {
+      "name": "c#",
+      "count": 5
+    },
+    {
+      "name": "flutter",
+      "count": 4
+    },
+    {
+      "name": "java",
+      "count": 4
+    },
+    {
+      "name": "bash",
+      "count": 2
+    },
+    {
+      "name": "kotlin",
+      "count": 2
+    },
+    {
+      "name": "dart",
+      "count": 2
+    },
+    {
+      "name": "go",
+      "count": 1
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 41
+    },
+    {
+      "name": "sql",
+      "count": 29
+    },
+    {
+      "name": "mongodb",
+      "count": 9
+    },
+    {
+      "name": "redis",
+      "count": 6
+    },
+    {
+      "name": "mysql",
+      "count": 6
+    },
+    {
+      "name": "supabase",
+      "count": 3
+    },
+    {
+      "name": "nosql",
+      "count": 3
+    },
+    {
+      "name": "sql server",
+      "count": 3
+    },
+    {
+      "name": "firebase",
+      "count": 3
+    },
+    {
+      "name": "elasticsearch",
+      "count": 2
+    },
+    {
+      "name": "firestore",
+      "count": 1
+    },
+    {
+      "name": "sqlite",
+      "count": 1
+    },
+    {
+      "name": "bigquery",
+      "count": 1
+    },
+    {
+      "name": "dynamodb",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 34
+    },
+    {
+      "name": "gcp",
+      "count": 21
+    },
+    {
+      "name": "azure",
+      "count": 13
+    },
+    {
+      "name": "vercel",
+      "count": 3
+    }
+  ]
+}

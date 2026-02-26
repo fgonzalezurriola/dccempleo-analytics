@@ -1,0 +1,65 @@
+[
+  {
+    "year": "2020",
+    "total": 8,
+    "practice": 5,
+    "junior": 1,
+    "semi_senior": 1,
+    "senior": 0,
+    "unknown": 1
+  },
+  {
+    "year": "2021",
+    "total": 528,
+    "practice": 248,
+    "junior": 78,
+    "semi_senior": 117,
+    "senior": 29,
+    "unknown": 56
+  },
+  {
+    "year": "2022",
+    "total": 415,
+    "practice": 200,
+    "junior": 44,
+    "semi_senior": 95,
+    "senior": 38,
+    "unknown": 38
+  },
+  {
+    "year": "2023",
+    "total": 284,
+    "practice": 141,
+    "junior": 38,
+    "semi_senior": 63,
+    "senior": 18,
+    "unknown": 24
+  },
+  {
+    "year": "2024",
+    "total": 310,
+    "practice": 178,
+    "junior": 26,
+    "semi_senior": 70,
+    "senior": 24,
+    "unknown": 12
+  },
+  {
+    "year": "2025",
+    "total": 551,
+    "practice": 303,
+    "junior": 78,
+    "semi_senior": 115,
+    "senior": 33,
+    "unknown": 22
+  },
+  {
+    "year": "2026",
+    "total": 68,
+    "practice": 40,
+    "junior": 11,
+    "semi_senior": 12,
+    "senior": 4,
+    "unknown": 1
+  }
+]

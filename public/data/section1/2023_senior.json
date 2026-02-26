@@ -1,0 +1,57 @@
+{
+  "total": 18,
+  "languages": [
+    {
+      "name": "python",
+      "count": 8
+    },
+    {
+      "name": "javascript",
+      "count": 6
+    },
+    {
+      "name": "php",
+      "count": 4
+    },
+    {
+      "name": "typescript",
+      "count": 2
+    },
+    {
+      "name": "go",
+      "count": 1
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 6
+    },
+    {
+      "name": "mysql",
+      "count": 3
+    },
+    {
+      "name": "mongodb",
+      "count": 1
+    },
+    {
+      "name": "sql",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 8
+    },
+    {
+      "name": "gcp",
+      "count": 5
+    },
+    {
+      "name": "azure",
+      "count": 3
+    }
+  ]
+}

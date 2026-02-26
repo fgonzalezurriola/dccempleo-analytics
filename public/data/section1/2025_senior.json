@@ -1,0 +1,85 @@
+{
+  "total": 33,
+  "languages": [
+    {
+      "name": "python",
+      "count": 10
+    },
+    {
+      "name": "typescript",
+      "count": 6
+    },
+    {
+      "name": "javascript",
+      "count": 5
+    },
+    {
+      "name": "flutter",
+      "count": 3
+    },
+    {
+      "name": "dart",
+      "count": 2
+    },
+    {
+      "name": "java",
+      "count": 2
+    },
+    {
+      "name": "go",
+      "count": 1
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 5
+    },
+    {
+      "name": "mongodb",
+      "count": 4
+    },
+    {
+      "name": "mysql",
+      "count": 3
+    },
+    {
+      "name": "supabase",
+      "count": 1
+    },
+    {
+      "name": "bigquery",
+      "count": 1
+    },
+    {
+      "name": "redis",
+      "count": 1
+    },
+    {
+      "name": "sql",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 11
+    },
+    {
+      "name": "gcp",
+      "count": 8
+    },
+    {
+      "name": "azure",
+      "count": 4
+    },
+    {
+      "name": "vercel",
+      "count": 1
+    },
+    {
+      "name": "render",
+      "count": 1
+    }
+  ]
+}

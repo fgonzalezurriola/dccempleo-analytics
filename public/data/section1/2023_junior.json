@@ -1,0 +1,89 @@
+{
+  "total": 38,
+  "languages": [
+    {
+      "name": "python",
+      "count": 16
+    },
+    {
+      "name": "javascript",
+      "count": 10
+    },
+    {
+      "name": "typescript",
+      "count": 10
+    },
+    {
+      "name": "java",
+      "count": 3
+    },
+    {
+      "name": "flutter",
+      "count": 3
+    },
+    {
+      "name": "kotlin",
+      "count": 2
+    },
+    {
+      "name": "c",
+      "count": 1
+    },
+    {
+      "name": "c++",
+      "count": 1
+    },
+    {
+      "name": "dart",
+      "count": 1
+    },
+    {
+      "name": "c#",
+      "count": 1
+    },
+    {
+      "name": "ruby",
+      "count": 1
+    },
+    {
+      "name": "php",
+      "count": 1
+    }
+  ],
+  "databases": [
+    {
+      "name": "sql",
+      "count": 8
+    },
+    {
+      "name": "postgresql",
+      "count": 5
+    },
+    {
+      "name": "dynamodb",
+      "count": 1
+    },
+    {
+      "name": "sql server",
+      "count": 1
+    },
+    {
+      "name": "mongodb",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 11
+    },
+    {
+      "name": "gcp",
+      "count": 9
+    },
+    {
+      "name": "azure",
+      "count": 3
+    }
+  ]
+}

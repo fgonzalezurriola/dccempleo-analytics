@@ -1,0 +1,157 @@
+{
+  "total": 473,
+  "languages": [
+    {
+      "name": "python",
+      "count": 166
+    },
+    {
+      "name": "javascript",
+      "count": 125
+    },
+    {
+      "name": "typescript",
+      "count": 103
+    },
+    {
+      "name": "ruby",
+      "count": 42
+    },
+    {
+      "name": "flutter",
+      "count": 22
+    },
+    {
+      "name": "java",
+      "count": 20
+    },
+    {
+      "name": "c#",
+      "count": 16
+    },
+    {
+      "name": "go",
+      "count": 14
+    },
+    {
+      "name": "php",
+      "count": 14
+    },
+    {
+      "name": "swift",
+      "count": 11
+    },
+    {
+      "name": "c++",
+      "count": 8
+    },
+    {
+      "name": "bash",
+      "count": 7
+    },
+    {
+      "name": "kotlin",
+      "count": 7
+    },
+    {
+      "name": "dart",
+      "count": 4
+    },
+    {
+      "name": "rust",
+      "count": 2
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 128
+    },
+    {
+      "name": "sql",
+      "count": 90
+    },
+    {
+      "name": "mongodb",
+      "count": 29
+    },
+    {
+      "name": "mysql",
+      "count": 27
+    },
+    {
+      "name": "sql server",
+      "count": 17
+    },
+    {
+      "name": "nosql",
+      "count": 14
+    },
+    {
+      "name": "firebase",
+      "count": 13
+    },
+    {
+      "name": "redis",
+      "count": 12
+    },
+    {
+      "name": "dynamodb",
+      "count": 12
+    },
+    {
+      "name": "supabase",
+      "count": 7
+    },
+    {
+      "name": "elasticsearch",
+      "count": 6
+    },
+    {
+      "name": "bigquery",
+      "count": 5
+    },
+    {
+      "name": "redshift",
+      "count": 5
+    },
+    {
+      "name": "oracle",
+      "count": 4
+    },
+    {
+      "name": "sqlite",
+      "count": 3
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 147
+    },
+    {
+      "name": "gcp",
+      "count": 85
+    },
+    {
+      "name": "azure",
+      "count": 27
+    },
+    {
+      "name": "vercel",
+      "count": 7
+    },
+    {
+      "name": "fly.io",
+      "count": 1
+    },
+    {
+      "name": "render",
+      "count": 1
+    },
+    {
+      "name": "digitalocean",
+      "count": 1
+    }
+  ]
+}

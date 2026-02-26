@@ -1,0 +1,121 @@
+{
+  "total": 178,
+  "languages": [
+    {
+      "name": "python",
+      "count": 64
+    },
+    {
+      "name": "typescript",
+      "count": 43
+    },
+    {
+      "name": "javascript",
+      "count": 39
+    },
+    {
+      "name": "ruby",
+      "count": 13
+    },
+    {
+      "name": "flutter",
+      "count": 7
+    },
+    {
+      "name": "php",
+      "count": 7
+    },
+    {
+      "name": "c",
+      "count": 6
+    },
+    {
+      "name": "go",
+      "count": 4
+    },
+    {
+      "name": "c#",
+      "count": 2
+    },
+    {
+      "name": "c++",
+      "count": 2
+    },
+    {
+      "name": "java",
+      "count": 1
+    },
+    {
+      "name": "dart",
+      "count": 1
+    }
+  ],
+  "databases": [
+    {
+      "name": "postgresql",
+      "count": 32
+    },
+    {
+      "name": "sql",
+      "count": 23
+    },
+    {
+      "name": "mongodb",
+      "count": 16
+    },
+    {
+      "name": "mysql",
+      "count": 10
+    },
+    {
+      "name": "firebase",
+      "count": 5
+    },
+    {
+      "name": "nosql",
+      "count": 4
+    },
+    {
+      "name": "sql server",
+      "count": 2
+    },
+    {
+      "name": "redis",
+      "count": 2
+    },
+    {
+      "name": "supabase",
+      "count": 1
+    },
+    {
+      "name": "mariadb",
+      "count": 1
+    }
+  ],
+  "clouds": [
+    {
+      "name": "aws",
+      "count": 53
+    },
+    {
+      "name": "gcp",
+      "count": 20
+    },
+    {
+      "name": "azure",
+      "count": 6
+    },
+    {
+      "name": "vercel",
+      "count": 3
+    },
+    {
+      "name": "cloudflare",
+      "count": 1
+    },
+    {
+      "name": "fly.io",
+      "count": 1
+    }
+  ]
+}
