@@ -26,19 +26,19 @@
       "count": 2
     },
     {
-      "name": "c",
-      "count": 1
-    },
-    {
       "name": "c++",
       "count": 1
     },
     {
-      "name": "dart",
+      "name": "c",
       "count": 1
     },
     {
       "name": "c#",
+      "count": 1
+    },
+    {
+      "name": "dart",
       "count": 1
     },
     {
@@ -84,6 +84,24 @@
     {
       "name": "azure",
       "count": 3
+    }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 15
+    },
+    {
+      "name": "next.js",
+      "count": 6
+    },
+    {
+      "name": "vue",
+      "count": 2
+    },
+    {
+      "name": "nuxt",
+      "count": 1
     }
   ]
 }

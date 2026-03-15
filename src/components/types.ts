@@ -10,6 +10,7 @@ export interface Section1Data {
   languages: ChartDataItem[];
   databases: ChartDataItem[];
   clouds: ChartDataItem[];
+  frontend_frameworks: ChartDataItem[];
 }
 
 export interface MetricsData {

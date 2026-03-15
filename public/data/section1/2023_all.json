@@ -108,15 +108,15 @@
       "count": 1
     },
     {
+      "name": "oracle",
+      "count": 1
+    },
+    {
       "name": "redshift",
       "count": 1
     },
     {
       "name": "sqlite",
-      "count": 1
-    },
-    {
-      "name": "oracle",
       "count": 1
     }
   ],
@@ -143,6 +143,32 @@
     },
     {
       "name": "render",
+      "count": 1
+    }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 62
+    },
+    {
+      "name": "vue",
+      "count": 39
+    },
+    {
+      "name": "next.js",
+      "count": 18
+    },
+    {
+      "name": "angular",
+      "count": 8
+    },
+    {
+      "name": "nuxt",
+      "count": 7
+    },
+    {
+      "name": "svelte",
       "count": 1
     }
   ]

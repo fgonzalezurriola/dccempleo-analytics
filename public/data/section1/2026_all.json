@@ -105,5 +105,23 @@
       "name": "fly.io",
       "count": 1
     }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 31
+    },
+    {
+      "name": "next.js",
+      "count": 10
+    },
+    {
+      "name": "vue",
+      "count": 3
+    },
+    {
+      "name": "angular",
+      "count": 1
+    }
   ]
 }

@@ -53,5 +53,15 @@
       "name": "azure",
       "count": 3
     }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 5
+    },
+    {
+      "name": "vue",
+      "count": 3
+    }
   ]
 }

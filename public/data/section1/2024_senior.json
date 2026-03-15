@@ -14,11 +14,11 @@
       "count": 5
     },
     {
-      "name": "rust",
+      "name": "go",
       "count": 1
     },
     {
-      "name": "go",
+      "name": "rust",
       "count": 1
     },
     {
@@ -44,11 +44,11 @@
       "count": 3
     },
     {
-      "name": "nosql",
+      "name": "firebase",
       "count": 3
     },
     {
-      "name": "firebase",
+      "name": "nosql",
       "count": 3
     },
     {
@@ -68,6 +68,24 @@
     {
       "name": "gcp",
       "count": 3
+    }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 4
+    },
+    {
+      "name": "angular",
+      "count": 4
+    },
+    {
+      "name": "vue",
+      "count": 2
+    },
+    {
+      "name": "next.js",
+      "count": 1
     }
   ]
 }

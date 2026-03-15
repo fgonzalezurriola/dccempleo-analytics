@@ -98,6 +98,25 @@ class AnalysisTests(unittest.TestCase):
         self.assertIn("dynamodb", out["databases"])
         self.assertIn("cosmosdb", out["databases"])
 
+    def test_process_message_classifies_frontend_frameworks(self) -> None:
+        row = {
+            "date_utc": "2025-01-01T00:00:00Z",
+            "text": "Frontend con React, Next.js, Vue, Angular, Svelte, Nuxt y Astro.",
+            "label": {
+                "seniority": "JUNIOR",
+                "offer_type": "JOB",
+                "tech_stack": ["React", "Next.js", "Vue", "Angular", "Svelte", "Nuxt", "Astro"],
+            },
+        }
+        out = process_message(row)
+        self.assertIn("react", out["frontend_frameworks"])
+        self.assertIn("next.js", out["frontend_frameworks"])
+        self.assertIn("vue", out["frontend_frameworks"])
+        self.assertIn("angular", out["frontend_frameworks"])
+        self.assertIn("svelte", out["frontend_frameworks"])
+        self.assertIn("nuxt", out["frontend_frameworks"])
+        self.assertIn("astro", out["frontend_frameworks"])
+
     def test_extract_ai_dev_tools_strict_detection(self) -> None:
         text = (
             "Buscamos dev que use Cursor, GitHub Copilot y Claude Code. "

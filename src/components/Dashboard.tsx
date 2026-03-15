@@ -245,7 +245,7 @@ export default function Dashboard() {
         </motion.div>
 
         {/* Charts */}
-        <motion.div className="charts-grid-3" variants={staggerContainer}>
+        <motion.div className="charts-grid" variants={staggerContainer}>
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">Top Lenguajes</h3>
             <BarChart data={section1?.languages ?? []} />
@@ -259,6 +259,11 @@ export default function Dashboard() {
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">Top Cloud</h3>
             <BarChart data={section1?.clouds ?? []} />
+          </motion.div>
+
+          <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
+            <h3 className="chart-card-title">Frameworks JS Más Pedidos</h3>
+            <BarChart data={section1?.frontend_frameworks ?? []} />
           </motion.div>
         </motion.div>
       </motion.section>

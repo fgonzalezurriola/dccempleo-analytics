@@ -88,15 +88,15 @@
       "count": 1
     },
     {
+      "name": "oracle",
+      "count": 1
+    },
+    {
       "name": "redshift",
       "count": 1
     },
     {
       "name": "sqlite",
-      "count": 1
-    },
-    {
-      "name": "oracle",
       "count": 1
     },
     {
@@ -127,6 +127,28 @@
     },
     {
       "name": "render",
+      "count": 1
+    }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 14
+    },
+    {
+      "name": "vue",
+      "count": 6
+    },
+    {
+      "name": "next.js",
+      "count": 6
+    },
+    {
+      "name": "angular",
+      "count": 4
+    },
+    {
+      "name": "nuxt",
       "count": 1
     }
   ]

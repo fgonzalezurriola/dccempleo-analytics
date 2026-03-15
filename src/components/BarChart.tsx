@@ -70,6 +70,16 @@ const TECH_COLORS: Record<string, string> = {
   railway: '#0B0D0E',
   render: '#46E3B7',
 
+  // Frontend frameworks
+  react: '#61DAFB',
+  'next.js': '#111111',
+  vue: '#42B883',
+  nuxt: '#00DC82',
+  angular: '#DD0031',
+  angularjs: '#E23237',
+  svelte: '#FF3E00',
+  astro: '#FF5D01',
+
   // AI Dev Tools
   cursor: '#7B61FF',
   'claude code': '#D97706',

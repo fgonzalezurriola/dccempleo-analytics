@@ -89,5 +89,23 @@
       "name": "vercel",
       "count": 1
     }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 8
+    },
+    {
+      "name": "next.js",
+      "count": 3
+    },
+    {
+      "name": "vue",
+      "count": 1
+    },
+    {
+      "name": "angular",
+      "count": 1
+    }
   ]
 }

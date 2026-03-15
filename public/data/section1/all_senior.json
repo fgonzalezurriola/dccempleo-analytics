@@ -117,5 +117,23 @@
       "name": "render",
       "count": 1
     }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 32
+    },
+    {
+      "name": "vue",
+      "count": 14
+    },
+    {
+      "name": "next.js",
+      "count": 7
+    },
+    {
+      "name": "angular",
+      "count": 4
+    }
   ]
 }

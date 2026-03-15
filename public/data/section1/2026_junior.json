@@ -20,11 +20,11 @@
       "count": 1
     },
     {
-      "name": "mysql",
+      "name": "dynamodb",
       "count": 1
     },
     {
-      "name": "dynamodb",
+      "name": "mysql",
       "count": 1
     }
   ],
@@ -36,6 +36,20 @@
     {
       "name": "gcp",
       "count": 3
+    }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 4
+    },
+    {
+      "name": "next.js",
+      "count": 1
+    },
+    {
+      "name": "angular",
+      "count": 1
     }
   ]
 }

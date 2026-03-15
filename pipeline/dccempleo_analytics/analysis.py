@@ -26,10 +26,18 @@ TECH_ALIASES: dict[str, str] = {
     "react": "react",
     "react.js": "react",
     "reactjs": "react",
+    "vue.js": "vue",
+    "vuejs": "vue",
     "next.js": "next.js",
     "nextjs": "next.js",
     "vue": "vue",
     "angular": "angular",
+    "angular.js": "angularjs",
+    "angularjs": "angularjs",
+    "svelte": "svelte",
+    "sveltekit": "svelte",
+    "svelte kit": "svelte",
+    "astro": "astro",
     "c#": "c#",
     "csharp": "c#",
     ".net": ".net",
@@ -182,6 +190,16 @@ CLOUD_TECH = {
     "netlify",
     "cloudflare",
     "vercel",
+}
+
+FRONTEND_FRAMEWORK_TECH = {
+    "react",
+    "next.js",
+    "vue",
+    "nuxt",
+    "angular",
+    "svelte",
+    "astro",
 }
 
 AI_DEV_TOOL_ALIASES: dict[str, str] = {
@@ -346,7 +364,8 @@ def parse_month(date_utc: str) -> str:
 
 def process_message(row: dict[str, Any]) -> dict[str, Any]:
     raw_text = str(row.get("text") or row.get("raw_text") or "")
-    label = row.get("label") if isinstance(row.get("label"), dict) else {}
+    raw_label = row.get("label")
+    label: dict[str, Any] = raw_label if isinstance(raw_label, dict) else {}
 
     seniority = str(label.get("seniority") or detect_seniority(raw_text)).upper()
     offer_type = str(label.get("offer_type") or detect_offer_type(raw_text)).upper()
@@ -361,6 +380,7 @@ def process_message(row: dict[str, Any]) -> dict[str, Any]:
     languages = sorted([tech for tech in tech_stack if tech in LANGUAGE_TECH])
     databases = sorted([tech for tech in tech_stack if tech in DATABASE_TECH])
     clouds = sorted([tech for tech in tech_stack if tech in CLOUD_TECH])
+    frontend_frameworks = sorted([tech for tech in tech_stack if tech in FRONTEND_FRAMEWORK_TECH])
     ai_dev_tools = extract_ai_dev_tools(raw_text)
     seniority_bucket = bucket_seniority(
         seniority=seniority, offer_type=offer_type, raw_text=raw_text
@@ -378,6 +398,7 @@ def process_message(row: dict[str, Any]) -> dict[str, Any]:
         "languages": languages,
         "databases": databases,
         "clouds": clouds,
+        "frontend_frameworks": frontend_frameworks,
         "ai_dev_tools": ai_dev_tools,
         "has_media": bool(row.get("has_media")),
         "anonymized_text": anonymize_text(raw_text),
@@ -429,6 +450,7 @@ def _build_section1(messages: list[dict[str, Any]]) -> dict[str, Any]:
     lang_counter: Counter[str] = Counter()
     db_counter: Counter[str] = Counter()
     cloud_counter: Counter[str] = Counter()
+    framework_counter: Counter[str] = Counter()
 
     for msg in messages:
         for lang in set(msg.get("languages") or []):
@@ -437,12 +459,15 @@ def _build_section1(messages: list[dict[str, Any]]) -> dict[str, Any]:
             db_counter[db] += 1
         for cloud in set(msg.get("clouds") or []):
             cloud_counter[cloud] += 1
+        for framework in set(msg.get("frontend_frameworks") or []):
+            framework_counter[framework] += 1
 
     return {
         "total": len(messages),
         "languages": _counter_to_chart_data(lang_counter, top_n=15),
         "databases": _counter_to_chart_data(db_counter, top_n=15),
         "clouds": _counter_to_chart_data(cloud_counter, top_n=10),
+        "frontend_frameworks": _counter_to_chart_data(framework_counter, top_n=10),
     }
 
 

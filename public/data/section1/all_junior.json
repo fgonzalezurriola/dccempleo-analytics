@@ -141,5 +141,31 @@
       "name": "vercel",
       "count": 3
     }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 98
+    },
+    {
+      "name": "next.js",
+      "count": 26
+    },
+    {
+      "name": "vue",
+      "count": 22
+    },
+    {
+      "name": "angular",
+      "count": 16
+    },
+    {
+      "name": "astro",
+      "count": 2
+    },
+    {
+      "name": "nuxt",
+      "count": 2
+    }
   ]
 }

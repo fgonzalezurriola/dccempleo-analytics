@@ -37,5 +37,11 @@
       "name": "gcp",
       "count": 1
     }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 1
+    }
   ]
 }

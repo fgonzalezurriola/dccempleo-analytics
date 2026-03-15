@@ -157,5 +157,35 @@
       "name": "digitalocean",
       "count": 1
     }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 350
+    },
+    {
+      "name": "vue",
+      "count": 127
+    },
+    {
+      "name": "next.js",
+      "count": 78
+    },
+    {
+      "name": "angular",
+      "count": 62
+    },
+    {
+      "name": "nuxt",
+      "count": 16
+    },
+    {
+      "name": "svelte",
+      "count": 8
+    },
+    {
+      "name": "astro",
+      "count": 1
+    }
   ]
 }

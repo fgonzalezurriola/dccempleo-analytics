@@ -44,11 +44,11 @@
       "count": 3
     },
     {
-      "name": "sqlite",
+      "name": "firebase",
       "count": 1
     },
     {
-      "name": "firebase",
+      "name": "sqlite",
       "count": 1
     },
     {
@@ -87,6 +87,20 @@
     },
     {
       "name": "azure",
+      "count": 1
+    }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 10
+    },
+    {
+      "name": "next.js",
+      "count": 4
+    },
+    {
+      "name": "vue",
       "count": 1
     }
   ]

@@ -108,11 +108,11 @@
       "count": 1
     },
     {
-      "name": "sqlite",
+      "name": "oracle",
       "count": 1
     },
     {
-      "name": "oracle",
+      "name": "sqlite",
       "count": 1
     }
   ],
@@ -147,6 +147,36 @@
     },
     {
       "name": "digitalocean",
+      "count": 1
+    }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 121
+    },
+    {
+      "name": "next.js",
+      "count": 41
+    },
+    {
+      "name": "vue",
+      "count": 37
+    },
+    {
+      "name": "angular",
+      "count": 18
+    },
+    {
+      "name": "nuxt",
+      "count": 6
+    },
+    {
+      "name": "svelte",
+      "count": 3
+    },
+    {
+      "name": "astro",
       "count": 1
     }
   ]

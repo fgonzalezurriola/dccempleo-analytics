@@ -161,5 +161,35 @@
       "name": "render",
       "count": 1
     }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 222
+    },
+    {
+      "name": "next.js",
+      "count": 79
+    },
+    {
+      "name": "vue",
+      "count": 49
+    },
+    {
+      "name": "angular",
+      "count": 33
+    },
+    {
+      "name": "nuxt",
+      "count": 8
+    },
+    {
+      "name": "svelte",
+      "count": 6
+    },
+    {
+      "name": "astro",
+      "count": 3
+    }
   ]
 }

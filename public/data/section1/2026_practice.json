@@ -44,11 +44,11 @@
       "count": 1
     },
     {
-      "name": "mysql",
+      "name": "dynamodb",
       "count": 1
     },
     {
-      "name": "dynamodb",
+      "name": "mysql",
       "count": 1
     }
   ],
@@ -68,6 +68,20 @@
     {
       "name": "vercel",
       "count": 1
+    }
+  ],
+  "frontend_frameworks": [
+    {
+      "name": "react",
+      "count": 15
+    },
+    {
+      "name": "next.js",
+      "count": 5
+    },
+    {
+      "name": "vue",
+      "count": 2
     }
   ]
 }
