@@ -39,6 +39,23 @@ const toolNameMap: Record<string, string> = {
   'herramientas de ia': '"Herramientas de IA"',
 };
 
+const partialYearMarkLine = {
+  symbol: 'none' as const,
+  label: {
+    show: true,
+    formatter: '2026 parcial',
+    color: '#111111',
+    fontFamily: "'Geist', Arial, system-ui, sans-serif",
+    fontSize: 11,
+    position: 'insideEndTop' as const,
+  },
+  lineStyle: {
+    color: '#111111',
+    type: 'dashed' as const,
+    width: 1.5,
+  },
+};
+
 /* ═══════════════ AI Tools Timeline ═══════════════ */
 
 export function AiToolsChart({ data }: { data: AiToolsTimeline | null }) {
@@ -229,6 +246,12 @@ export function SeniorityShiftChart({ data }: { data: SeniorityShiftYear[] | nul
         color: COLORS[i],
         borderRadius: i === buckets.length - 1 ? [2, 2, 0, 0] : undefined,
       },
+      markLine: i === 0
+        ? {
+            ...partialYearMarkLine,
+            data: [{ xAxis: '2026' }],
+          }
+        : undefined,
       emphasis: {
         itemStyle: { shadowBlur: 6, shadowColor: 'rgba(0,0,0,0.1)' },
       },
@@ -297,6 +320,12 @@ export function TechTrendsChart({ data }: { data: TechTrends | null }) {
       symbolSize: 6,
       lineStyle: { width: 2.5, color: getTechColor(tech, i) },
       itemStyle: { color: getTechColor(tech, i) },
+      markLine: i === 0
+        ? {
+            ...partialYearMarkLine,
+            data: [{ xAxis: '2026' }],
+          }
+        : undefined,
     })),
     animationDuration: 800,
   };
