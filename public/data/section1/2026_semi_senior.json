@@ -1,12 +1,16 @@
 {
-  "total": 12,
+  "total": 31,
   "languages": [
     {
       "name": "python",
-      "count": 5
+      "count": 12
     },
     {
       "name": "typescript",
+      "count": 10
+    },
+    {
+      "name": "javascript",
       "count": 4
     },
     {
@@ -14,15 +18,11 @@
       "count": 2
     },
     {
-      "name": "javascript",
+      "name": "flutter",
       "count": 2
     },
     {
       "name": "swift",
-      "count": 1
-    },
-    {
-      "name": "flutter",
       "count": 1
     },
     {
@@ -32,23 +32,43 @@
     {
       "name": "c#",
       "count": 1
+    },
+    {
+      "name": "rust",
+      "count": 1
+    },
+    {
+      "name": "c++",
+      "count": 1
     }
   ],
   "databases": [
     {
       "name": "postgresql",
-      "count": 8
+      "count": 13
     },
     {
       "name": "sql",
-      "count": 3
+      "count": 7
     },
     {
-      "name": "firebase",
-      "count": 1
+      "name": "mongodb",
+      "count": 2
+    },
+    {
+      "name": "mysql",
+      "count": 2
+    },
+    {
+      "name": "bigquery",
+      "count": 2
     },
     {
       "name": "sqlite",
+      "count": 1
+    },
+    {
+      "name": "firebase",
       "count": 1
     },
     {
@@ -56,48 +76,52 @@
       "count": 1
     },
     {
-      "name": "mongodb",
-      "count": 1
-    },
-    {
       "name": "supabase",
       "count": 1
     },
     {
-      "name": "mysql",
+      "name": "dynamodb",
+      "count": 1
+    },
+    {
+      "name": "redis",
       "count": 1
     }
   ],
   "clouds": [
     {
       "name": "aws",
-      "count": 4
+      "count": 14
     },
     {
       "name": "gcp",
+      "count": 5
+    },
+    {
+      "name": "azure",
+      "count": 5
+    },
+    {
+      "name": "vercel",
       "count": 2
     },
     {
       "name": "fly.io",
-      "count": 1
-    },
-    {
-      "name": "vercel",
-      "count": 1
-    },
-    {
-      "name": "azure",
       "count": 1
     }
   ],
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 10
+      "count": 14
     },
     {
       "name": "next.js",
-      "count": 4
+      "count": 8
+    },
+    {
+      "name": "angular",
+      "count": 2
     },
     {
       "name": "vue",

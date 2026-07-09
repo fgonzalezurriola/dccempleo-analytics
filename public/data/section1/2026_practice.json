@@ -1,87 +1,163 @@
 {
-  "total": 40,
+  "total": 146,
   "languages": [
     {
       "name": "python",
-      "count": 19
-    },
-    {
-      "name": "javascript",
-      "count": 10
+      "count": 65
     },
     {
       "name": "typescript",
-      "count": 9
+      "count": 44
+    },
+    {
+      "name": "javascript",
+      "count": 27
     },
     {
       "name": "ruby",
-      "count": 2
+      "count": 11
+    },
+    {
+      "name": "flutter",
+      "count": 6
     },
     {
       "name": "go",
+      "count": 5
+    },
+    {
+      "name": "java",
+      "count": 3
+    },
+    {
+      "name": "c#",
+      "count": 3
+    },
+    {
+      "name": "c++",
+      "count": 3
+    },
+    {
+      "name": "php",
+      "count": 2
+    },
+    {
+      "name": "c",
+      "count": 2
+    },
+    {
+      "name": "dart",
       "count": 1
     }
   ],
   "databases": [
     {
       "name": "postgresql",
-      "count": 12
+      "count": 40
     },
     {
       "name": "sql",
-      "count": 9
+      "count": 38
     },
     {
       "name": "nosql",
-      "count": 5
-    },
-    {
-      "name": "redis",
-      "count": 1
+      "count": 9
     },
     {
       "name": "bigquery",
-      "count": 1
+      "count": 7
+    },
+    {
+      "name": "mysql",
+      "count": 4
+    },
+    {
+      "name": "redis",
+      "count": 3
+    },
+    {
+      "name": "snowflake",
+      "count": 3
+    },
+    {
+      "name": "supabase",
+      "count": 2
+    },
+    {
+      "name": "oracle",
+      "count": 2
+    },
+    {
+      "name": "sql server",
+      "count": 2
+    },
+    {
+      "name": "mongodb",
+      "count": 2
     },
     {
       "name": "dynamodb",
       "count": 1
     },
     {
-      "name": "mysql",
+      "name": "firestore",
+      "count": 1
+    },
+    {
+      "name": "firebase",
       "count": 1
     }
   ],
   "clouds": [
     {
-      "name": "gcp",
-      "count": 12
+      "name": "aws",
+      "count": 48
     },
     {
-      "name": "aws",
-      "count": 11
+      "name": "gcp",
+      "count": 33
     },
     {
       "name": "azure",
-      "count": 1
+      "count": 13
     },
     {
       "name": "vercel",
+      "count": 6
+    },
+    {
+      "name": "fly.io",
+      "count": 4
+    },
+    {
+      "name": "cloudflare",
       "count": 1
     }
   ],
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 15
+      "count": 49
     },
     {
       "name": "next.js",
-      "count": 5
+      "count": 19
     },
     {
       "name": "vue",
+      "count": 11
+    },
+    {
+      "name": "angular",
       "count": 2
+    },
+    {
+      "name": "svelte",
+      "count": 1
+    },
+    {
+      "name": "nuxt",
+      "count": 1
     }
   ]
 }

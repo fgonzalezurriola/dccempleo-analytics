@@ -1,19 +1,51 @@
 {
-  "total": 11,
+  "total": 25,
   "languages": [
     {
       "name": "typescript",
-      "count": 5
+      "count": 11
+    },
+    {
+      "name": "python",
+      "count": 8
     },
     {
       "name": "ruby",
+      "count": 4
+    },
+    {
+      "name": "javascript",
       "count": 2
+    },
+    {
+      "name": "go",
+      "count": 1
+    },
+    {
+      "name": "c++",
+      "count": 1
     }
   ],
   "databases": [
     {
       "name": "postgresql",
+      "count": 6
+    },
+    {
+      "name": "sql",
       "count": 3
+    },
+    {
+      "name": "redis",
+      "count": 2
+    },
+    {
+      "name": "mongodb",
+      "count": 2
+    },
+    {
+      "name": "bigquery",
+      "count": 2
     },
     {
       "name": "firebase",
@@ -26,29 +58,49 @@
     {
       "name": "mysql",
       "count": 1
+    },
+    {
+      "name": "redshift",
+      "count": 1
     }
   ],
   "clouds": [
     {
       "name": "aws",
-      "count": 3
+      "count": 9
     },
     {
       "name": "gcp",
-      "count": 3
+      "count": 4
+    },
+    {
+      "name": "vercel",
+      "count": 1
+    },
+    {
+      "name": "fly.io",
+      "count": 1
     }
   ],
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 4
+      "count": 9
     },
     {
       "name": "next.js",
-      "count": 1
+      "count": 4
     },
     {
       "name": "angular",
+      "count": 1
+    },
+    {
+      "name": "astro",
+      "count": 1
+    },
+    {
+      "name": "vue",
       "count": 1
     }
   ]

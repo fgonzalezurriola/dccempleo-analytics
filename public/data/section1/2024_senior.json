@@ -22,11 +22,11 @@
       "count": 1
     },
     {
-      "name": "kotlin",
+      "name": "java",
       "count": 1
     },
     {
-      "name": "java",
+      "name": "kotlin",
       "count": 1
     }
   ],
@@ -44,11 +44,11 @@
       "count": 3
     },
     {
-      "name": "firebase",
+      "name": "nosql",
       "count": 3
     },
     {
-      "name": "nosql",
+      "name": "firebase",
       "count": 3
     },
     {

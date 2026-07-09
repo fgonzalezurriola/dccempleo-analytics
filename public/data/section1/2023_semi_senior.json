@@ -64,11 +64,11 @@
       "count": 5
     },
     {
-      "name": "bigquery",
+      "name": "mongodb",
       "count": 4
     },
     {
-      "name": "mongodb",
+      "name": "bigquery",
       "count": 4
     },
     {
@@ -92,11 +92,11 @@
       "count": 1
     },
     {
-      "name": "redshift",
+      "name": "sqlite",
       "count": 1
     },
     {
-      "name": "sqlite",
+      "name": "redshift",
       "count": 1
     },
     {

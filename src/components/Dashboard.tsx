@@ -25,7 +25,7 @@ const YEARS: { value: YearFilter; label: string; preview?: boolean }[] = [
   { value: '2023', label: '2023' },
   { value: '2024', label: '2024' },
   { value: '2025', label: '2025' },
-  { value: '2026', label: '2026 (Parcial)', preview: true },
+  { value: '2026', label: '2026' },
 ];
 
 const SENIORITIES: { value: SeniorityFilter; label: string }[] = [
@@ -103,8 +103,8 @@ export default function Dashboard() {
     });
   }, []);
 
-  // Filter out 2020 and 2026 from Insights charts (insufficient data)
-  const EXCLUDED_YEARS = new Set(['2020', '2026']);
+  // Filter out 2020 from Insights charts (insufficient data)
+  const EXCLUDED_YEARS = new Set(['2020']);
 
   const filteredSeniorityShift = seniorityShift?.filter(
     (d) => !EXCLUDED_YEARS.has(d.year),
@@ -128,14 +128,14 @@ export default function Dashboard() {
     : null;
 
   const filteredMonthlyVolume = monthlyVolume?.filter(
-    (d) => !d.month.startsWith('2020') && !d.month.startsWith('2026'),
+    (d) => !d.month.startsWith('2020'),
   ) ?? null;
 
   const filteredAiTools: AiToolsTimeline | null = aiTools
     ? (() => {
       const validIdx = aiTools.months
         .map((m, i) => ({ m, i }))
-        .filter(({ m }) => !m.startsWith('2020') && !m.startsWith('2026'));
+        .filter(({ m }) => !m.startsWith('2020'));
       return {
         months: validIdx.map(({ m }) => m),
         tools: Object.fromEntries(

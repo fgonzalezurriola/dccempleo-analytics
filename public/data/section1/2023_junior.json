@@ -26,11 +26,11 @@
       "count": 2
     },
     {
-      "name": "c++",
+      "name": "c",
       "count": 1
     },
     {
-      "name": "c",
+      "name": "c++",
       "count": 1
     },
     {
@@ -64,11 +64,11 @@
       "count": 1
     },
     {
-      "name": "sql server",
+      "name": "mongodb",
       "count": 1
     },
     {
-      "name": "mongodb",
+      "name": "sql server",
       "count": 1
     }
   ],

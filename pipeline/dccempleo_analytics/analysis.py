@@ -415,6 +415,7 @@ def _counter_to_chart_data(counter: Counter[str], top_n: int = 20) -> list[dict[
 
 YEAR_FILTERS = ["all", "2023", "2024", "2025", "2026"]
 SENIORITY_FILTERS = ["all", "practice", "junior", "semi_senior", "senior"]
+WEB_MAX_MONTH = "2026-06"
 
 _SENIORITY_MAP: dict[str, str] = {
     "practice": "PRACTICE",
@@ -444,6 +445,14 @@ def _filter_messages(
             m for m in filtered if str(m.get("seniority_bucket", "")).upper() == bucket_value
         ]
     return filtered
+
+
+def _filter_web_messages(messages: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return [
+        msg
+        for msg in messages
+        if (month := str(msg.get("month") or "unknown")) != "unknown" and month <= WEB_MAX_MONTH
+    ]
 
 
 def _build_section1(messages: list[dict[str, Any]]) -> dict[str, Any]:
@@ -575,6 +584,8 @@ def generate_web_data(
     """Generate all pre-computed JSON files for the Astro frontend."""
     import json
 
+    web_messages = _filter_web_messages(messages)
+
     section1_dir = output_dir / "section1"
     section2_dir = output_dir / "section2"
     section1_dir.mkdir(parents=True, exist_ok=True)
@@ -583,18 +594,18 @@ def generate_web_data(
     # Section 1: year x seniority combinations
     for year in YEAR_FILTERS:
         for seniority in SENIORITY_FILTERS:
-            filtered = _filter_messages(messages, year, seniority)
+            filtered = _filter_messages(web_messages, year, seniority)
             data = _build_section1(filtered)
             filename = f"{year}_{seniority}.json"
             path = section1_dir / filename
             with path.open("w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
 
-    # Section 2: insights (always use all messages)
-    ai_timeline = _build_ai_tools_timeline(messages)
-    monthly_vol = _build_monthly_volume(messages)
-    seniority_shift = _build_seniority_shift(messages)
-    tech_trends = _build_tech_trends(messages)
+    # Section 2: insights (use messages up to WEB_MAX_MONTH)
+    ai_timeline = _build_ai_tools_timeline(web_messages)
+    monthly_vol = _build_monthly_volume(web_messages)
+    seniority_shift = _build_seniority_shift(web_messages)
+    tech_trends = _build_tech_trends(web_messages)
 
     for filename, data in [
         ("ai_tools_timeline.json", ai_timeline),
@@ -607,18 +618,20 @@ def generate_web_data(
             json.dump(data, f, ensure_ascii=False, indent=2)
 
     # Metrics summary
-    total = len(messages)
+    total = len(web_messages)
     entry_level = sum(
-        1 for m in messages if str(m.get("seniority_bucket", "")).upper() in {"PRACTICE", "JUNIOR"}
+        1
+        for m in web_messages
+        if str(m.get("seniority_bucket", "")).upper() in {"PRACTICE", "JUNIOR"}
     )
-    ai_tools_count = sum(1 for m in messages if m.get("ai_dev_tools"))
+    ai_tools_count = sum(1 for m in web_messages if m.get("ai_dev_tools"))
 
-    months_all = sorted({m.get("month", "unknown") for m in messages} - {"unknown"})
+    months_all = sorted({m.get("month", "unknown") for m in web_messages} - {"unknown"})
     date_span = f"{months_all[0]} a {months_all[-1]}" if months_all else "sin datos"
 
     years_summary: dict[str, dict[str, int]] = {}
     for year in YEAR_FILTERS:
-        filtered = _filter_messages(messages, year, "all")
+        filtered = _filter_messages(web_messages, year, "all")
         yr_entry = sum(
             1
             for m in filtered

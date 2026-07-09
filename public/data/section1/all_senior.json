@@ -1,28 +1,32 @@
 {
-  "total": 146,
+  "total": 164,
   "languages": [
     {
       "name": "python",
-      "count": 45
+      "count": 51
     },
     {
       "name": "javascript",
-      "count": 36
+      "count": 45
     },
     {
       "name": "typescript",
-      "count": 29
+      "count": 33
     },
     {
       "name": "flutter",
+      "count": 9
+    },
+    {
+      "name": "go",
       "count": 8
     },
     {
       "name": "php",
-      "count": 7
+      "count": 8
     },
     {
-      "name": "go",
+      "name": "kotlin",
       "count": 6
     },
     {
@@ -30,16 +34,12 @@
       "count": 5
     },
     {
-      "name": "kotlin",
+      "name": "swift",
       "count": 5
     },
     {
-      "name": "swift",
-      "count": 4
-    },
-    {
       "name": "ruby",
-      "count": 4
+      "count": 5
     },
     {
       "name": "dart",
@@ -47,21 +47,25 @@
     },
     {
       "name": "rust",
+      "count": 2
+    },
+    {
+      "name": "c",
       "count": 1
     }
   ],
   "databases": [
     {
       "name": "postgresql",
-      "count": 32
+      "count": 35
     },
     {
       "name": "sql",
-      "count": 15
+      "count": 16
     },
     {
       "name": "mongodb",
-      "count": 14
+      "count": 15
     },
     {
       "name": "mysql",
@@ -69,19 +73,19 @@
     },
     {
       "name": "nosql",
-      "count": 7
+      "count": 8
     },
     {
       "name": "redis",
-      "count": 6
+      "count": 7
     },
     {
       "name": "bigquery",
-      "count": 4
+      "count": 5
     },
     {
       "name": "firebase",
-      "count": 3
+      "count": 4
     },
     {
       "name": "sql server",
@@ -99,7 +103,7 @@
   "clouds": [
     {
       "name": "aws",
-      "count": 39
+      "count": 50
     },
     {
       "name": "gcp",
@@ -121,19 +125,19 @@
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 32
+      "count": 39
+    },
+    {
+      "name": "next.js",
+      "count": 15
     },
     {
       "name": "vue",
       "count": 14
     },
     {
-      "name": "next.js",
-      "count": 7
-    },
-    {
       "name": "angular",
-      "count": 4
+      "count": 5
     }
   ]
 }

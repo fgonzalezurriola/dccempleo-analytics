@@ -1,17 +1,17 @@
 {
-  "total": 473,
+  "total": 492,
   "languages": [
     {
       "name": "python",
-      "count": 166
+      "count": 173
     },
     {
       "name": "javascript",
-      "count": 125
+      "count": 127
     },
     {
       "name": "typescript",
-      "count": 103
+      "count": 109
     },
     {
       "name": "ruby",
@@ -19,7 +19,7 @@
     },
     {
       "name": "flutter",
-      "count": 22
+      "count": 23
     },
     {
       "name": "java",
@@ -43,7 +43,7 @@
     },
     {
       "name": "c++",
-      "count": 8
+      "count": 9
     },
     {
       "name": "bash",
@@ -59,25 +59,25 @@
     },
     {
       "name": "rust",
-      "count": 2
+      "count": 3
     }
   ],
   "databases": [
     {
       "name": "postgresql",
-      "count": 128
+      "count": 133
     },
     {
       "name": "sql",
-      "count": 90
+      "count": 94
     },
     {
       "name": "mongodb",
-      "count": 29
+      "count": 30
     },
     {
       "name": "mysql",
-      "count": 27
+      "count": 28
     },
     {
       "name": "sql server",
@@ -93,23 +93,23 @@
     },
     {
       "name": "redis",
-      "count": 12
+      "count": 13
     },
     {
       "name": "dynamodb",
-      "count": 12
+      "count": 13
     },
     {
       "name": "supabase",
       "count": 7
     },
     {
-      "name": "elasticsearch",
-      "count": 6
+      "name": "bigquery",
+      "count": 7
     },
     {
-      "name": "bigquery",
-      "count": 5
+      "name": "elasticsearch",
+      "count": 6
     },
     {
       "name": "redshift",
@@ -127,19 +127,19 @@
   "clouds": [
     {
       "name": "aws",
-      "count": 147
+      "count": 157
     },
     {
       "name": "gcp",
-      "count": 85
+      "count": 88
     },
     {
       "name": "azure",
-      "count": 27
+      "count": 31
     },
     {
       "name": "vercel",
-      "count": 7
+      "count": 8
     },
     {
       "name": "fly.io",
@@ -157,11 +157,11 @@
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 175
+      "count": 179
     },
     {
       "name": "next.js",
-      "count": 46
+      "count": 50
     },
     {
       "name": "vue",
@@ -169,7 +169,7 @@
     },
     {
       "name": "angular",
-      "count": 31
+      "count": 33
     },
     {
       "name": "svelte",

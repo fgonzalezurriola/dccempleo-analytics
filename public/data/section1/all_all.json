@@ -1,111 +1,111 @@
 {
-  "total": 2164,
+  "total": 2339,
   "languages": [
     {
       "name": "python",
-      "count": 775
+      "count": 851
     },
     {
       "name": "javascript",
-      "count": 567
+      "count": 599
     },
     {
       "name": "typescript",
-      "count": 423
+      "count": 477
     },
     {
       "name": "ruby",
-      "count": 170
-    },
-    {
-      "name": "java",
-      "count": 79
+      "count": 182
     },
     {
       "name": "flutter",
-      "count": 76
+      "count": 84
+    },
+    {
+      "name": "java",
+      "count": 82
     },
     {
       "name": "php",
-      "count": 63
+      "count": 66
     },
     {
       "name": "go",
-      "count": 58
+      "count": 65
     },
     {
       "name": "c#",
-      "count": 54
+      "count": 57
     },
     {
       "name": "c",
-      "count": 30
+      "count": 33
     },
     {
       "name": "kotlin",
+      "count": 27
+    },
+    {
+      "name": "c++",
       "count": 26
     },
     {
       "name": "swift",
-      "count": 21
+      "count": 23
     },
     {
-      "name": "c++",
-      "count": 20
+      "name": "dart",
+      "count": 15
     },
     {
       "name": "bash",
       "count": 15
-    },
-    {
-      "name": "dart",
-      "count": 14
     }
   ],
   "databases": [
     {
       "name": "postgresql",
-      "count": 502
+      "count": 544
     },
     {
       "name": "sql",
-      "count": 361
+      "count": 400
     },
     {
       "name": "mongodb",
-      "count": 131
+      "count": 139
     },
     {
       "name": "mysql",
-      "count": 108
+      "count": 112
     },
     {
       "name": "nosql",
-      "count": 79
+      "count": 84
     },
     {
       "name": "firebase",
-      "count": 58
-    },
-    {
-      "name": "dynamodb",
-      "count": 37
-    },
-    {
-      "name": "sql server",
-      "count": 34
+      "count": 60
     },
     {
       "name": "redis",
-      "count": 32
+      "count": 39
     },
     {
       "name": "bigquery",
-      "count": 28
+      "count": 39
+    },
+    {
+      "name": "dynamodb",
+      "count": 38
+    },
+    {
+      "name": "sql server",
+      "count": 37
     },
     {
       "name": "supabase",
-      "count": 19
+      "count": 22
     },
     {
       "name": "elasticsearch",
@@ -113,7 +113,7 @@
     },
     {
       "name": "oracle",
-      "count": 13
+      "count": 16
     },
     {
       "name": "mariadb",
@@ -121,33 +121,33 @@
     },
     {
       "name": "redshift",
-      "count": 9
+      "count": 10
     }
   ],
   "clouds": [
     {
       "name": "aws",
-      "count": 618
+      "count": 685
     },
     {
       "name": "gcp",
-      "count": 295
+      "count": 320
     },
     {
       "name": "azure",
-      "count": 102
+      "count": 121
     },
     {
       "name": "vercel",
-      "count": 27
+      "count": 35
     },
     {
       "name": "fly.io",
-      "count": 5
+      "count": 10
     },
     {
       "name": "cloudflare",
-      "count": 3
+      "count": 4
     },
     {
       "name": "digitalocean",
@@ -165,31 +165,31 @@
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 675
+      "count": 729
     },
     {
       "name": "vue",
-      "count": 211
+      "count": 224
     },
     {
       "name": "next.js",
-      "count": 162
+      "count": 192
     },
     {
       "name": "angular",
-      "count": 119
+      "count": 126
     },
     {
       "name": "nuxt",
-      "count": 21
+      "count": 22
     },
     {
       "name": "svelte",
-      "count": 13
+      "count": 14
     },
     {
       "name": "astro",
-      "count": 3
+      "count": 4
     }
   ]
 }
