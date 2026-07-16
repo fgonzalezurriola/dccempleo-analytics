@@ -1,5 +1,6 @@
 import ReactEChartsCore from 'echarts-for-react/lib/core';
 import * as echarts from 'echarts/core';
+import type { EChartsCoreOption } from 'echarts/core';
 import { BarChart as EBarChart, LineChart as ELineChart } from 'echarts/charts';
 import {
   GridComponent,
@@ -70,7 +71,7 @@ export function AiToolsChart({ data }: { data: AiToolsTimeline | null }) {
 
   const tools = Object.keys(data.tools);
 
-  const option: echarts.EChartsOption = {
+  const option: EChartsCoreOption = {
     tooltip: {
       ...tooltipStyle,
       trigger: 'axis',
@@ -141,7 +142,7 @@ export function MonthlyVolumeChart({ data }: { data: MonthlyVolume[] | null }) {
     return <div className="empty-state">Sin datos de volumen mensual</div>;
   }
 
-  const option: echarts.EChartsOption = {
+  const option: EChartsCoreOption = {
     tooltip: {
       ...tooltipStyle,
       trigger: 'axis',
@@ -195,6 +196,111 @@ export function MonthlyVolumeChart({ data }: { data: MonthlyVolume[] | null }) {
   );
 }
 
+/* ═══════════════ AI Adoption ═══════════════ */
+
+export function AiAdoptionChart({
+  aiTools,
+  monthlyVolume,
+}: {
+  aiTools: AiToolsTimeline | null;
+  monthlyVolume: MonthlyVolume[] | null;
+}) {
+  if (!aiTools || !monthlyVolume || aiTools.months.length === 0) {
+    return <div className="empty-state">Sin datos de adopción de AI Dev Tools</div>;
+  }
+
+  const volumeByMonth = new Map(monthlyVolume.map((item) => [item.month, item.count]));
+  const rows = aiTools.months
+    .map((month, index) => {
+      const total = volumeByMonth.get(month) ?? 0;
+      const withAi = aiTools.total_per_month[index] ?? 0;
+      return {
+        month,
+        total,
+        withAi: Math.min(withAi, total),
+        withoutAi: Math.max(total - withAi, 0),
+      };
+    })
+    .filter((row) => row.total > 0);
+
+  const option: EChartsCoreOption = {
+    tooltip: {
+      ...tooltipStyle,
+      trigger: 'axis',
+      axisPointer: { type: 'shadow' },
+      formatter: (params: unknown) => {
+        const items = (Array.isArray(params) ? params : [params]) as Array<{ axisValue?: string }>;
+        const month = String(items[0]?.axisValue ?? '');
+        const row = rows.find((item) => item.month === month);
+        if (!row) return month;
+        const percentage = (count: number) => `${((count / row.total) * 100).toFixed(1)}%`;
+        return [
+          `<strong>${month}</strong>`,
+          `Mencionan AI Dev Tools: ${row.withAi} (${percentage(row.withAi)})`,
+          `No mencionan AI Dev Tools: ${row.withoutAi} (${percentage(row.withoutAi)})`,
+          `Total: ${row.total}`,
+        ].join('<br/>');
+      },
+    },
+    legend: {
+      data: ['Mencionan AI Dev Tools', 'No mencionan AI Dev Tools'],
+      bottom: 0,
+      textStyle: { ...chartTextStyle, fontSize: 11 },
+      itemWidth: 16,
+      itemHeight: 10,
+    },
+    grid: {
+      left: 12,
+      right: 16,
+      top: 12,
+      bottom: 40,
+      containLabel: true,
+    },
+    xAxis: {
+      type: 'category',
+      data: rows.map((row) => row.month),
+      axisLabel: { ...chartTextStyle, fontSize: 10, rotate: 35 },
+      axisLine: { lineStyle: { color: '#c9b99a' } },
+      axisTick: { show: false },
+    },
+    yAxis: {
+      type: 'value',
+      min: 0,
+      max: 100,
+      axisLabel: { ...chartTextStyle, fontSize: 11, color: '#8a7d6b', formatter: '{value}%' },
+      splitLine: { lineStyle: { color: '#e8dcc8', type: 'dashed' } },
+      axisLine: { show: false },
+    },
+    series: [
+      {
+        name: 'Mencionan AI Dev Tools',
+        type: 'bar',
+        stack: 'adoption',
+        data: rows.map((row) => (row.withAi / row.total) * 100),
+        itemStyle: { color: '#c4654a' },
+      },
+      {
+        name: 'No mencionan AI Dev Tools',
+        type: 'bar',
+        stack: 'adoption',
+        data: rows.map((row) => (row.withoutAi / row.total) * 100),
+        itemStyle: { color: '#c9b99a' },
+      },
+    ],
+    animationDuration: 600,
+  };
+
+  return (
+    <ReactEChartsCore
+      echarts={echarts}
+      option={option}
+      style={{ height: 300, width: '100%' }}
+      notMerge
+      lazyUpdate
+    />
+  );
+}
+
 /* ═══════════════ Seniority Shift ═══════════════ */
 
 export function SeniorityShiftChart({ data }: { data: SeniorityShiftYear[] | null }) {
@@ -209,7 +315,7 @@ export function SeniorityShiftChart({ data }: { data: SeniorityShiftYear[] | nul
     { key: 'senior', label: 'Senior' },
   ];
 
-  const option: echarts.EChartsOption = {
+  const option: EChartsCoreOption = {
     tooltip: {
       ...tooltipStyle,
       trigger: 'axis',
@@ -246,7 +352,7 @@ export function SeniorityShiftChart({ data }: { data: SeniorityShiftYear[] | nul
       name: bucket.label,
       type: 'bar' as const,
       stack: 'seniority',
-      data: data.map((d) => (d as Record<string, number>)[bucket.key] || 0),
+      data: data.map((d) => (d as unknown as Record<string, number>)[bucket.key] || 0),
       itemStyle: {
         color: COLORS[i],
         borderRadius: i === buckets.length - 1 ? [2, 2, 0, 0] : undefined,
@@ -279,7 +385,7 @@ export function TechTrendsChart({ data }: { data: TechTrends | null }) {
 
   const techs = Object.keys(data.technologies);
 
-  const option: echarts.EChartsOption = {
+  const option: EChartsCoreOption = {
     tooltip: {
       ...tooltipStyle,
       trigger: 'axis',

@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { BarChart } from './BarChart';
 import {
   AiToolsChart,
+  AiAdoptionChart,
   MonthlyVolumeChart,
   SeniorityShiftChart,
   TechTrendsChart,
@@ -289,6 +290,11 @@ export default function Dashboard() {
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
             <h3 className="chart-card-title">AI Dev Tools</h3>
             <AiToolsChart data={filteredAiTools} />
+          </motion.div>
+
+          <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
+            <h3 className="chart-card-title">Ofertas que mencionan AI Dev Tools</h3>
+            <AiAdoptionChart aiTools={filteredAiTools} monthlyVolume={filteredMonthlyVolume} />
           </motion.div>
 
           <motion.div className="chart-card" variants={fadeUp} transition={{ duration: 0.4 }}>
