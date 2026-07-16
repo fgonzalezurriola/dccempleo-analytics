@@ -28,6 +28,7 @@ export interface AiToolsTimeline {
   months: string[];
   tools: Record<string, number[]>;
   total_per_month: number[];
+  offers_with_ai_per_month?: number[];
 }
 
 export interface MonthlyVolume {

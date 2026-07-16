@@ -146,6 +146,9 @@ export default function Dashboard() {
           ]),
         ),
         total_per_month: validIdx.map(({ i }) => aiTools.total_per_month[i]),
+        offers_with_ai_per_month: aiTools.offers_with_ai_per_month
+          ? validIdx.map(({ i }) => aiTools.offers_with_ai_per_month?.[i] ?? 0)
+          : undefined,
       };
     })()
     : null;

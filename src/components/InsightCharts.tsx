@@ -205,15 +205,21 @@ export function AiAdoptionChart({
   aiTools: AiToolsTimeline | null;
   monthlyVolume: MonthlyVolume[] | null;
 }) {
-  if (!aiTools || !monthlyVolume || aiTools.months.length === 0) {
-    return <div className="empty-state">Sin datos de adopción de AI Dev Tools</div>;
+  if (
+    !aiTools ||
+    !monthlyVolume ||
+    !aiTools.offers_with_ai_per_month ||
+    aiTools.months.length === 0
+  ) {
+    return <div className="empty-state">Regenerar datos para mostrar adopción de AI Dev Tools</div>;
   }
 
+  const offersWithAi = aiTools.offers_with_ai_per_month;
   const volumeByMonth = new Map(monthlyVolume.map((item) => [item.month, item.count]));
   const rows = aiTools.months
     .map((month, index) => {
       const total = volumeByMonth.get(month) ?? 0;
-      const withAi = aiTools.total_per_month[index] ?? 0;
+      const withAi = offersWithAi[index] ?? 0;
       return {
         month,
         total,

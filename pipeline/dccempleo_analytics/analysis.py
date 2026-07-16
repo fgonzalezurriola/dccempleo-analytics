@@ -482,6 +482,7 @@ def _build_section1(messages: list[dict[str, Any]]) -> dict[str, Any]:
 
 def _build_ai_tools_timeline(messages: list[dict[str, Any]]) -> dict[str, Any]:
     monthly_tool_counter: dict[str, Counter[str]] = {}
+    monthly_ai_offer_counter: Counter[str] = Counter()
     all_tools: set[str] = set()
 
     for msg in messages:
@@ -489,6 +490,9 @@ def _build_ai_tools_timeline(messages: list[dict[str, Any]]) -> dict[str, Any]:
         if month == "unknown":
             continue
         tools = msg.get("ai_dev_tools") or []
+        if tools:
+            # An offer mentioning multiple tools still counts once here.
+            monthly_ai_offer_counter[month] += 1
         for tool in set(tools):
             all_tools.add(tool)
             if month not in monthly_tool_counter:
@@ -512,13 +516,15 @@ def _build_ai_tools_timeline(messages: list[dict[str, Any]]) -> dict[str, Any]:
             monthly_tool_counter.get(m, Counter()).get(tool, 0) for m in months_sorted
         ]
 
-    # Also build total per month
+    # This is the number of tool mentions, not the number of offers.
     total_per_month = [sum(monthly_tool_counter.get(m, Counter()).values()) for m in months_sorted]
+    offers_with_ai_per_month = [monthly_ai_offer_counter.get(m, 0) for m in months_sorted]
 
     return {
         "months": months_sorted,
         "tools": tools_data,
         "total_per_month": total_per_month,
+        "offers_with_ai_per_month": offers_with_ai_per_month,
     }
 
 

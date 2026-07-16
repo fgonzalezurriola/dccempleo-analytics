@@ -9,10 +9,20 @@ from dccempleo_analytics.analysis import (
     extract_tech_stack,
     normalize_tech_stack,
     process_message,
+    _build_ai_tools_timeline,
 )
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_ai_tools_timeline_counts_an_offer_once(self) -> None:
+        timeline = _build_ai_tools_timeline([
+            {"month": "2026-06", "ai_dev_tools": ["cursor", "claude code"]},
+            {"month": "2026-06", "ai_dev_tools": ["cursor"]},
+        ])
+
+        self.assertEqual(timeline["total_per_month"], [3])
+        self.assertEqual(timeline["offers_with_ai_per_month"], [2])
+
     def test_anonymize_text(self) -> None:
         text = (
             "Escribe a hola@empresa.cl o +56 9 1234 5678 y revisa https://example.com @reclutador"
