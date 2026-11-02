@@ -108,15 +108,15 @@
       "count": 1
     },
     {
-      "name": "oracle",
-      "count": 1
-    },
-    {
       "name": "sqlite",
       "count": 1
     },
     {
       "name": "redshift",
+      "count": 1
+    },
+    {
+      "name": "oracle",
       "count": 1
     }
   ],

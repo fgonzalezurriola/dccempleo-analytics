@@ -1,15 +1,15 @@
 {
-  "generated_at_utc": "2026-07-09T02:35:58.501457Z",
-  "total_messages": 2339,
-  "entry_level_messages": 1511,
-  "entry_level_share_percent": 64.6,
-  "messages_with_ai_dev_tools": 102,
-  "ai_dev_tools_share_percent": 4.36,
-  "date_span": "2020-12 a 2026-06",
+  "generated_at_utc": "2026-11-02T22:42:19.378675Z",
+  "total_messages": 2467,
+  "entry_level_messages": 1595,
+  "entry_level_share_percent": 64.65,
+  "messages_with_ai_dev_tools": 143,
+  "ai_dev_tools_share_percent": 5.8,
+  "date_span": "2020-12 a 2026-10",
   "years": {
     "all": {
-      "total": 2339,
-      "entry_level": 1511
+      "total": 2467,
+      "entry_level": 1595
     },
     "2023": {
       "total": 284,
@@ -24,8 +24,8 @@
       "entry_level": 381
     },
     "2026": {
-      "total": 243,
-      "entry_level": 171
+      "total": 371,
+      "entry_level": 255
     }
   }
 }

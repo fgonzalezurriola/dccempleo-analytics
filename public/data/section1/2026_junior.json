@@ -1,21 +1,21 @@
 {
-  "total": 25,
+  "total": 39,
   "languages": [
     {
       "name": "typescript",
-      "count": 11
+      "count": 15
     },
     {
       "name": "python",
-      "count": 8
+      "count": 11
     },
     {
       "name": "ruby",
-      "count": 4
+      "count": 5
     },
     {
       "name": "javascript",
-      "count": 2
+      "count": 4
     },
     {
       "name": "go",
@@ -29,18 +29,26 @@
   "databases": [
     {
       "name": "postgresql",
-      "count": 6
+      "count": 9
     },
     {
       "name": "sql",
-      "count": 3
-    },
-    {
-      "name": "redis",
-      "count": 2
+      "count": 6
     },
     {
       "name": "mongodb",
+      "count": 4
+    },
+    {
+      "name": "redis",
+      "count": 3
+    },
+    {
+      "name": "dynamodb",
+      "count": 2
+    },
+    {
+      "name": "mysql",
       "count": 2
     },
     {
@@ -52,14 +60,6 @@
       "count": 1
     },
     {
-      "name": "dynamodb",
-      "count": 1
-    },
-    {
-      "name": "mysql",
-      "count": 1
-    },
-    {
       "name": "redshift",
       "count": 1
     }
@@ -67,11 +67,11 @@
   "clouds": [
     {
       "name": "aws",
-      "count": 9
+      "count": 12
     },
     {
       "name": "gcp",
-      "count": 4
+      "count": 6
     },
     {
       "name": "vercel",
@@ -80,16 +80,24 @@
     {
       "name": "fly.io",
       "count": 1
+    },
+    {
+      "name": "azure",
+      "count": 1
     }
   ],
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 9
+      "count": 14
     },
     {
       "name": "next.js",
-      "count": 4
+      "count": 6
+    },
+    {
+      "name": "vue",
+      "count": 2
     },
     {
       "name": "angular",
@@ -100,7 +108,7 @@
       "count": 1
     },
     {
-      "name": "vue",
+      "name": "nuxt",
       "count": 1
     }
   ]

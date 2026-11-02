@@ -1,21 +1,21 @@
 {
-  "total": 492,
+  "total": 500,
   "languages": [
     {
       "name": "python",
-      "count": 173
+      "count": 178
     },
     {
       "name": "javascript",
-      "count": 127
+      "count": 128
     },
     {
       "name": "typescript",
-      "count": 109
+      "count": 113
     },
     {
       "name": "ruby",
-      "count": 42
+      "count": 43
     },
     {
       "name": "flutter",
@@ -59,21 +59,21 @@
     },
     {
       "name": "rust",
-      "count": 3
+      "count": 4
     }
   ],
   "databases": [
     {
       "name": "postgresql",
-      "count": 133
+      "count": 134
     },
     {
       "name": "sql",
-      "count": 94
+      "count": 96
     },
     {
       "name": "mongodb",
-      "count": 30
+      "count": 32
     },
     {
       "name": "mysql",
@@ -100,11 +100,11 @@
       "count": 13
     },
     {
-      "name": "supabase",
-      "count": 7
+      "name": "bigquery",
+      "count": 8
     },
     {
-      "name": "bigquery",
+      "name": "supabase",
       "count": 7
     },
     {
@@ -127,15 +127,15 @@
   "clouds": [
     {
       "name": "aws",
-      "count": 157
+      "count": 162
     },
     {
       "name": "gcp",
-      "count": 88
+      "count": 90
     },
     {
       "name": "azure",
-      "count": 31
+      "count": 32
     },
     {
       "name": "vercel",
@@ -157,11 +157,11 @@
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 179
+      "count": 181
     },
     {
       "name": "next.js",
-      "count": 50
+      "count": 53
     },
     {
       "name": "vue",

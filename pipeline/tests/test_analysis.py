@@ -10,10 +10,15 @@ from dccempleo_analytics.analysis import (
     normalize_tech_stack,
     process_message,
     _build_ai_tools_timeline,
+    _filter_web_messages,
 )
 
 
 class AnalysisTests(unittest.TestCase):
+    def test_web_messages_include_recent_months(self) -> None:
+        messages = [{"month": "2026-06"}, {"month": "2026-10"}, {"month": "unknown"}]
+        self.assertEqual(_filter_web_messages(messages), messages[:2])
+
     def test_ai_tools_timeline_counts_an_offer_once(self) -> None:
         timeline = _build_ai_tools_timeline([
             {"month": "2026-06", "ai_dev_tools": ["cursor", "claude code"]},

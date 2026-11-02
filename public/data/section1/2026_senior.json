@@ -1,20 +1,28 @@
 {
-  "total": 22,
+  "total": 33,
   "languages": [
     {
-      "name": "javascript",
-      "count": 10
+      "name": "python",
+      "count": 13
     },
     {
-      "name": "python",
-      "count": 9
+      "name": "javascript",
+      "count": 11
     },
     {
       "name": "typescript",
-      "count": 4
+      "count": 7
     },
     {
       "name": "go",
+      "count": 2
+    },
+    {
+      "name": "ruby",
+      "count": 2
+    },
+    {
+      "name": "c++",
       "count": 2
     },
     {
@@ -34,33 +42,33 @@
       "count": 1
     },
     {
-      "name": "c",
-      "count": 1
-    },
-    {
-      "name": "ruby",
-      "count": 1
-    },
-    {
       "name": "rust",
+      "count": 1
+    },
+    {
+      "name": "c",
       "count": 1
     }
   ],
   "databases": [
     {
       "name": "postgresql",
+      "count": 8
+    },
+    {
+      "name": "sql",
       "count": 4
     },
     {
       "name": "redis",
-      "count": 2
-    },
-    {
-      "name": "sql",
-      "count": 2
+      "count": 3
     },
     {
       "name": "bigquery",
+      "count": 3
+    },
+    {
+      "name": "nosql",
       "count": 2
     },
     {
@@ -72,7 +80,7 @@
       "count": 1
     },
     {
-      "name": "nosql",
+      "name": "oracle",
       "count": 1
     }
   ],
@@ -83,21 +91,21 @@
     },
     {
       "name": "gcp",
-      "count": 1
+      "count": 4
     }
   ],
   "frontend_frameworks": [
     {
-      "name": "react",
-      "count": 8
+      "name": "next.js",
+      "count": 10
     },
     {
-      "name": "next.js",
-      "count": 8
+      "name": "react",
+      "count": 9
     },
     {
       "name": "angular",
-      "count": 1
+      "count": 2
     }
   ]
 }

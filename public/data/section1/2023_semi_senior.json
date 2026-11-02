@@ -88,15 +88,15 @@
       "count": 1
     },
     {
-      "name": "oracle",
-      "count": 1
-    },
-    {
       "name": "sqlite",
       "count": 1
     },
     {
       "name": "redshift",
+      "count": 1
+    },
+    {
+      "name": "oracle",
       "count": 1
     },
     {
@@ -122,11 +122,11 @@
       "count": 4
     },
     {
-      "name": "vercel",
+      "name": "render",
       "count": 1
     },
     {
-      "name": "render",
+      "name": "vercel",
       "count": 1
     }
   ],

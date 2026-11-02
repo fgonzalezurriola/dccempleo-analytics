@@ -415,7 +415,6 @@ def _counter_to_chart_data(counter: Counter[str], top_n: int = 20) -> list[dict[
 
 YEAR_FILTERS = ["all", "2023", "2024", "2025", "2026"]
 SENIORITY_FILTERS = ["all", "practice", "junior", "semi_senior", "senior"]
-WEB_MAX_MONTH = "2026-06"
 
 _SENIORITY_MAP: dict[str, str] = {
     "practice": "PRACTICE",
@@ -451,7 +450,7 @@ def _filter_web_messages(messages: list[dict[str, Any]]) -> list[dict[str, Any]]
     return [
         msg
         for msg in messages
-        if (month := str(msg.get("month") or "unknown")) != "unknown" and month <= WEB_MAX_MONTH
+        if str(msg.get("month") or "unknown") != "unknown"
     ]
 
 
@@ -607,7 +606,7 @@ def generate_web_data(
             with path.open("w", encoding="utf-8") as f:
                 json.dump(data, f, ensure_ascii=False, indent=2)
 
-    # Section 2: insights (use messages up to WEB_MAX_MONTH)
+    # Section 2: insights
     ai_timeline = _build_ai_tools_timeline(web_messages)
     monthly_vol = _build_monthly_volume(web_messages)
     seniority_shift = _build_seniority_shift(web_messages)

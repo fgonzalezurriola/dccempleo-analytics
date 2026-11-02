@@ -1,24 +1,28 @@
 {
-  "total": 31,
+  "total": 39,
   "languages": [
     {
       "name": "python",
-      "count": 12
+      "count": 17
     },
     {
       "name": "typescript",
-      "count": 10
+      "count": 14
     },
     {
       "name": "javascript",
-      "count": 4
+      "count": 5
     },
     {
       "name": "ruby",
-      "count": 2
+      "count": 3
     },
     {
       "name": "flutter",
+      "count": 2
+    },
+    {
+      "name": "rust",
       "count": 2
     },
     {
@@ -34,7 +38,7 @@
       "count": 1
     },
     {
-      "name": "rust",
+      "name": "c",
       "count": 1
     },
     {
@@ -45,22 +49,22 @@
   "databases": [
     {
       "name": "postgresql",
-      "count": 13
+      "count": 14
     },
     {
       "name": "sql",
-      "count": 7
+      "count": 9
     },
     {
       "name": "mongodb",
-      "count": 2
-    },
-    {
-      "name": "mysql",
-      "count": 2
+      "count": 4
     },
     {
       "name": "bigquery",
+      "count": 3
+    },
+    {
+      "name": "mysql",
       "count": 2
     },
     {
@@ -91,15 +95,15 @@
   "clouds": [
     {
       "name": "aws",
-      "count": 14
+      "count": 19
     },
     {
       "name": "gcp",
-      "count": 5
+      "count": 7
     },
     {
       "name": "azure",
-      "count": 5
+      "count": 6
     },
     {
       "name": "vercel",
@@ -113,11 +117,11 @@
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 14
+      "count": 16
     },
     {
       "name": "next.js",
-      "count": 8
+      "count": 11
     },
     {
       "name": "angular",

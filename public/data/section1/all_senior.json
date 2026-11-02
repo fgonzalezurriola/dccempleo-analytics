@@ -1,17 +1,17 @@
 {
-  "total": 164,
+  "total": 175,
   "languages": [
     {
       "name": "python",
-      "count": 51
+      "count": 55
     },
     {
       "name": "javascript",
-      "count": 45
+      "count": 46
     },
     {
       "name": "typescript",
-      "count": 33
+      "count": 36
     },
     {
       "name": "flutter",
@@ -30,15 +30,15 @@
       "count": 6
     },
     {
+      "name": "ruby",
+      "count": 6
+    },
+    {
       "name": "java",
       "count": 5
     },
     {
       "name": "swift",
-      "count": 5
-    },
-    {
-      "name": "ruby",
       "count": 5
     },
     {
@@ -50,6 +50,10 @@
       "count": 2
     },
     {
+      "name": "c++",
+      "count": 2
+    },
+    {
       "name": "c",
       "count": 1
     }
@@ -57,11 +61,11 @@
   "databases": [
     {
       "name": "postgresql",
-      "count": 35
+      "count": 39
     },
     {
       "name": "sql",
-      "count": 16
+      "count": 18
     },
     {
       "name": "mongodb",
@@ -73,15 +77,15 @@
     },
     {
       "name": "nosql",
-      "count": 8
+      "count": 9
     },
     {
       "name": "redis",
-      "count": 7
+      "count": 8
     },
     {
       "name": "bigquery",
-      "count": 5
+      "count": 6
     },
     {
       "name": "firebase",
@@ -92,11 +96,11 @@
       "count": 3
     },
     {
-      "name": "supabase",
-      "count": 1
+      "name": "oracle",
+      "count": 2
     },
     {
-      "name": "oracle",
+      "name": "supabase",
       "count": 1
     }
   ],
@@ -107,29 +111,29 @@
     },
     {
       "name": "gcp",
-      "count": 19
+      "count": 22
     },
     {
       "name": "azure",
       "count": 7
     },
     {
-      "name": "vercel",
+      "name": "render",
       "count": 1
     },
     {
-      "name": "render",
+      "name": "vercel",
       "count": 1
     }
   ],
   "frontend_frameworks": [
     {
       "name": "react",
-      "count": 39
+      "count": 40
     },
     {
       "name": "next.js",
-      "count": 15
+      "count": 17
     },
     {
       "name": "vue",
@@ -137,7 +141,7 @@
     },
     {
       "name": "angular",
-      "count": 5
+      "count": 6
     }
   ]
 }
